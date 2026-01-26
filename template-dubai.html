@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO & Open Graph for KakaoTalk/Facebook sharing -->
-  <title id="page-title">김준수 ♥ 이서영 결혼합니다</title>
+  <title id="page-title">정지성 ♥ 전유진 결혼합니다 - Dubai</title>
   <meta name="description" content="2026년 3월 15일 토요일 오후 2시 | 그랜드 웨딩홀">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" id="og-title" content="김준수 ♥ 이서영 결혼합니다">
+  <meta property="og:title" id="og-title" content="정지성 ♥ 전유진 결혼합니다">
   <meta property="og:description" id="og-description" content="2026년 3월 15일 토요일 오후 2시 | 그랜드 웨딩홀">
   <meta property="og:image" id="og-image" content="https://your-domain.com/images/og-image.jpg">
   <meta property="og:url" id="og-url" content="https://your-domain.com">
@@ -24,188 +24,147 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/botanical.css">
+  <link rel="stylesheet" href="css/dubai.css">
 </head>
 <body>
 
   <!-- 히어로 섹션 -->
   <section class="hero-section fade-in">
-    <div class="leaf-decoration top-left">🌿</div>
-
-    <div class="couple-names-botanical">
-      <span id="groom-firstname">준수</span>
-      <span class="heart-botanical">♡</span>
-      <span id="bride-firstname">서영</span>
+    <div class="hero-title">WEDDING</div>
+    <div class="hero-names">
+      <div id="groom-name">김 준 수</div>
+      <div class="hero-separator">&</div>
+      <div id="bride-name">이 서 영</div>
     </div>
 
-    <div class="leaf-divider">🍃 2026. 03. 15 🍃</div>
+    <div class="hero-date" id="wedding-date">2026. 03. 15 SAT</div>
+    <div class="hero-time" id="wedding-time">PM 2:00</div>
 
-    <div class="wedding-message">우리, 결혼합니다</div>
+    <div class="hero-venue" id="venue-name">그랜드 볼룸 3F</div>
 
-    <div class="leaf-decoration bottom-right">🌿</div>
-
-    <div class="couple-photo-botanical">
-      <div class="photo-circle">
-        <div class="photo-placeholder">🌸 사진 🌸</div>
-      </div>
-    </div>
+    <div class="scroll-indicator">↓</div>
   </section>
-
-  <!-- 잎 디바이더 -->
-  <div class="botanical-divider">
-    🌿 🌿 🌿
-  </div>
 
   <!-- 인사말 섹션 -->
   <section class="greeting-section fade-in">
     <div class="container">
-      <h2 class="greeting-title-botanical">🌱 소중한 분들께</h2>
+      <h2 class="greeting-title">초대합니다</h2>
 
-      <p class="greeting-message-botanical" id="greeting-text">
-        봄날의 따스한 햇살처럼
-        서로를 비추며 살아가겠습니다.
-
-        함께 자리하시어
-        축복해 주시면 감사하겠습니다.
+      <p class="greeting-message" id="greeting-text">
+        저희 두 사람이
+        사랑으로 하나 되는 소중한 날을
+        함께해 주시면 큰 기쁨이 되겠습니다.
       </p>
 
-      <div class="leaf-divider-small">─ 🌿 ─</div>
-
-      <div class="parents-info-botanical" id="parents-info">
-        <div class="parent-group-botanical">
-          <div class="parent-label-botanical">신랑</div>
-          <div class="parent-name-botanical" id="groom-fullname">김준수</div>
-          <div class="parent-detail-botanical">
-            <span id="groom-father">김철수</span> · <span id="groom-mother">박영희</span>의 아들
-          </div>
+      <div class="parents-info" id="parents-info">
+        <div class="parent-group">
+          <div class="parent-label">[신랑측 부모님]</div>
+          <div class="parent-names">아버지 김철수 · 어머니 박영희</div>
         </div>
 
-        <div class="parent-group-botanical">
-          <div class="parent-label-botanical">신부</div>
-          <div class="parent-name-botanical" id="bride-fullname">이서영</div>
-          <div class="parent-detail-botanical">
-            <span id="bride-father">이민호</span> · <span id="bride-mother">최수진</span>의 딸
-          </div>
+        <div class="parent-group">
+          <div class="parent-label">[신부측 부모님]</div>
+          <div class="parent-names">아버지 이민호 · 어머니 최수진</div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- 잎 디바이더 -->
-  <div class="botanical-divider">
-    🍃 🍃 🍃
-  </div>
 
   <!-- 갤러리 섹션 -->
   <section class="gallery-section fade-in">
-    <div class="container">
-      <h2 class="gallery-title-botanical">🌿 Gallery</h2>
+    <div class="gallery-header">
+      <h2 class="gallery-title">GALLERY</h2>
+    </div>
 
-      <div class="gallery-container-wrapper">
-        <button class="gallery-nav-btn prev" id="gallery-prev">‹</button>
-        <div class="gallery-organic" id="gallery-container">
-          <!-- JavaScript로 동적 생성 -->
-        </div>
-        <button class="gallery-nav-btn next" id="gallery-next">›</button>
-      </div>
-
-      <div class="gallery-indicators" id="gallery-indicators">
+    <div class="gallery-container-wrapper">
+      <button class="gallery-nav-btn prev" id="gallery-prev">‹</button>
+      <div class="gallery-scroll" id="gallery-container">
         <!-- JavaScript로 동적 생성 -->
       </div>
+      <button class="gallery-nav-btn next" id="gallery-next">›</button>
+    </div>
+
+    <div class="gallery-indicators" id="gallery-indicators">
+      <!-- JavaScript로 동적 생성 -->
     </div>
   </section>
-
-  <!-- 잎 디바이더 -->
-  <div class="botanical-divider">
-    🌿 🌿 🌿
-  </div>
 
   <!-- 일시/장소 섹션 -->
   <section class="info-section fade-in">
     <div class="container">
-      <h2 class="info-title-botanical">🌱 예식 안내</h2>
+      <h2 class="info-title">WHEN & WHERE</h2>
 
-      <div class="info-card-botanical date-card-botanical">
-        <div class="card-icon-botanical">📅</div>
-        <div class="card-content-botanical">
-          <div class="card-label">날짜</div>
-          <div id="info-date">2026년 3월 15일</div>
-          <div id="info-time">토요일 오후 2시</div>
-        </div>
+      <div class="info-date" id="info-date">2026년 3월 15일 토요일</div>
+      <div class="info-time" id="info-time">오후 2시</div>
+
+      <div class="dday-box" id="dday">D - 48</div>
+
+      <div class="venue-info">
+        <div class="venue-name" id="info-venue-name">그랜드 웨딩홀</div>
+        <div class="venue-address" id="info-venue-address">서울시 강남구 테헤란로 123</div>
+        <div class="venue-floor" id="info-venue-floor">3층 그랜드 볼룸</div>
+        <div class="venue-tel" id="info-venue-tel">TEL. 02-1234-5678</div>
       </div>
 
-      <div class="dday-card-botanical" id="dday">
-        🌿 D - 48
-      </div>
-
-      <div class="info-card-botanical location-card-botanical">
-        <div class="card-icon-botanical">📍</div>
-        <div class="card-content-botanical">
-          <div class="card-label">장소</div>
-          <div class="venue-name-botanical" id="info-venue-name">그랜드 웨딩홀</div>
-          <div class="venue-address-botanical" id="info-venue-address">서울시 강남구 테헤란로 123</div>
-          <div class="venue-floor-botanical" id="info-venue-floor">3층 그랜드 볼룸</div>
-          <div class="venue-tel-botanical" id="info-venue-tel">TEL. 02-1234-5678</div>
-        </div>
-      </div>
-
-      <div class="map-card-botanical">
-        <div id="map" style="width:100%;height:100%;border-radius:20px;"></div>
+      <div class="map-container">
+        <div id="map" style="width:100%;height:100%;"></div>
       </div>
 
       <div class="nav-buttons">
-        <button class="btn btn-botanical-primary" onclick="openKakaoNavi()">
-          🌿 카카오내비
+        <button class="btn btn-secondary" onclick="openKakaoNavi()">
+          카카오내비
         </button>
-        <button class="btn btn-botanical-secondary" onclick="openTmapNavi()">
-          🌿 티맵
+        <button class="btn btn-secondary" onclick="openTmapNavi()">
+          티맵
         </button>
       </div>
     </div>
   </section>
 
-  <!-- 잎 디바이더 -->
-  <div class="botanical-divider">
-    🍃 🍃 🍃
-  </div>
-
   <!-- 계좌번호 섹션 -->
   <section class="account-section fade-in">
     <div class="container">
-      <h2 class="account-title-botanical">🌱 마음 전하실 곳</h2>
+      <h2 class="account-title">ACCOUNT</h2>
 
-      <div class="account-card-botanical groom-botanical">
-        <div class="card-header-botanical">
-          <div class="leaf-icon">🌿</div>
-          <div class="header-text">신랑측</div>
-        </div>
-        <div class="card-body-botanical">
-          <div class="account-bank" id="groom-bank">카카오뱅크</div>
-          <div class="account-number" id="groom-number">3333-01-1234567</div>
-          <div class="account-holder" id="groom-holder">김준수</div>
-          <button class="btn btn-botanical-primary btn-block copy-button" data-copy="3333-01-1234567">
-            복사하기
-          </button>
+      <!-- 신랑측 -->
+      <div class="accordion" id="groom-accordion">
+        <button class="accordion-header" onclick="toggleAccordion(this)">
+          <span>신랑측 마음 전하실 곳</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <div class="account-detail">
+            <div class="account-bank" id="groom-bank">카카오뱅크</div>
+            <div class="account-number" id="groom-number">3333-01-1234567</div>
+            <div class="account-holder" id="groom-holder">예금주: 김준수</div>
+            <button class="btn btn-primary btn-block copy-button" data-copy="3333-01-1234567">
+              복사하기
+            </button>
+            <!-- 카카오페이 송금 버튼 (선택사항) -->
+            <!-- <button class="btn btn-secondary btn-block kakaopay-button">
+              카카오페이 송금
+            </button> -->
+          </div>
         </div>
       </div>
 
-      <div class="account-card-botanical bride-botanical">
-        <div class="card-header-botanical">
-          <div class="leaf-icon">🌿</div>
-          <div class="header-text">신부측</div>
-        </div>
-        <div class="card-body-botanical">
-          <div class="account-bank" id="bride-bank">카카오뱅크</div>
-          <div class="account-number" id="bride-number">3333-01-7654321</div>
-          <div class="account-holder" id="bride-holder">이서영</div>
-          <button class="btn btn-botanical-primary btn-block copy-button" data-copy="3333-01-7654321">
-            복사하기
-          </button>
+      <!-- 신부측 -->
+      <div class="accordion" id="bride-accordion">
+        <button class="accordion-header" onclick="toggleAccordion(this)">
+          <span>신부측 마음 전하실 곳</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <div class="account-detail">
+            <div class="account-bank" id="bride-bank">카카오뱅크</div>
+            <div class="account-number" id="bride-number">3333-01-7654321</div>
+            <div class="account-holder" id="bride-holder">예금주: 이서영</div>
+            <button class="btn btn-primary btn-block copy-button" data-copy="3333-01-7654321">
+              복사하기
+            </button>
+          </div>
         </div>
       </div>
-
-      <div class="leaf-trio">🌿 🍃 🌱</div>
-      <div class="footer-botanical">Thank you for coming</div>
     </div>
   </section>
 
@@ -230,6 +189,7 @@
 
   <!-- 페이지 로드 시 초기화 -->
   <script>
+    // config에서 데이터 읽어와서 HTML 업데이트
     document.addEventListener('DOMContentLoaded', () => {
       const config = window.weddingConfig;
 
@@ -243,28 +203,40 @@
       }
 
       // 신랑신부 이름
-      document.getElementById('groom-firstname').textContent = config.groom.firstName;
-      document.getElementById('bride-firstname').textContent = config.bride.firstName;
-      document.getElementById('groom-fullname').textContent = config.groom.name;
-      document.getElementById('bride-fullname').textContent = config.bride.name;
+      document.getElementById('groom-name').textContent = config.groom.name.split('').join(' ');
+      document.getElementById('bride-name').textContent = config.bride.name.split('').join(' ');
+
+      // 날짜/시간/장소
+      document.getElementById('wedding-date').textContent = config.wedding.dateString.replace(/년|월/g, '.').replace('일', '').replace('토요일', 'SAT');
+      document.getElementById('wedding-time').textContent = config.wedding.time.replace('오후', 'PM').replace('시', ':00');
+      document.getElementById('venue-name').textContent = config.wedding.venue.floor;
 
       // 인사말
       document.getElementById('greeting-text').textContent = config.message.main;
 
       // 부모님 정보
-      document.getElementById('groom-father').textContent = config.groom.father;
-      document.getElementById('groom-mother').textContent = config.groom.mother;
-      document.getElementById('bride-father').textContent = config.bride.father;
-      document.getElementById('bride-mother').textContent = config.bride.mother;
+      if (config.settings.showParents) {
+        const parentsHtml = `
+          <div class="parent-group">
+            <div class="parent-label">[신랑측 부모님]</div>
+            <div class="parent-names">아버지 ${config.groom.father} · 어머니 ${config.groom.mother}</div>
+          </div>
+          <div class="parent-group">
+            <div class="parent-label">[신부측 부모님]</div>
+            <div class="parent-names">아버지 ${config.bride.father} · 어머니 ${config.bride.mother}</div>
+          </div>
+        `;
+        document.getElementById('parents-info').innerHTML = parentsHtml;
+      }
 
-      // 갤러리 (수평 스크롤)
+      // 갤러리
       const galleryContainer = document.getElementById('gallery-container');
       const indicatorsContainer = document.getElementById('gallery-indicators');
 
       config.gallery.forEach((imgSrc, index) => {
         // 갤러리 아이템
         const item = document.createElement('div');
-        item.className = 'gallery-item-botanical';
+        item.className = 'gallery-item';
         item.innerHTML = `<img src="${imgSrc}" alt="갤러리 이미지 ${index + 1}" loading="lazy">`;
         galleryContainer.appendChild(item);
 
@@ -336,13 +308,13 @@
       // 계좌번호
       document.getElementById('groom-bank').textContent = config.groom.account.bank;
       document.getElementById('groom-number').textContent = config.groom.account.number;
-      document.getElementById('groom-holder').textContent = config.groom.account.holder;
-      document.querySelectorAll('.copy-button')[0].setAttribute('data-copy', config.groom.account.number);
+      document.getElementById('groom-holder').textContent = `예금주: ${config.groom.account.holder}`;
+      document.querySelector('#groom-accordion .copy-button').setAttribute('data-copy', config.groom.account.number);
 
       document.getElementById('bride-bank').textContent = config.bride.account.bank;
       document.getElementById('bride-number').textContent = config.bride.account.number;
-      document.getElementById('bride-holder').textContent = config.bride.account.holder;
-      document.querySelectorAll('.copy-button')[1].setAttribute('data-copy', config.bride.account.number);
+      document.getElementById('bride-holder').textContent = `예금주: ${config.bride.account.holder}`;
+      document.querySelector('#bride-accordion .copy-button').setAttribute('data-copy', config.bride.account.number);
     });
 
     // 길찾기 함수 (전역)

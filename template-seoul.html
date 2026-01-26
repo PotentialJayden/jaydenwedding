@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO & Open Graph for KakaoTalk/Facebook sharing -->
-  <title id="page-title">김준수 ♥ 이서영 결혼합니다</title>
+  <title id="page-title">정지성 ♥ 전유진 결혼합니다 - Seoul</title>
   <meta name="description" content="2026년 3월 15일 토요일 오후 2시 | 그랜드 웨딩홀">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" id="og-title" content="김준수 ♥ 이서영 결혼합니다">
+  <meta property="og:title" id="og-title" content="정지성 ♥ 전유진 결혼합니다">
   <meta property="og:description" id="og-description" content="2026년 3월 15일 토요일 오후 2시 | 그랜드 웨딩홀">
   <meta property="og:image" id="og-image" content="https://your-domain.com/images/og-image.jpg">
   <meta property="og:url" id="og-url" content="https://your-domain.com">
@@ -24,199 +24,147 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/romantic.css">
+  <link rel="stylesheet" href="css/seoul.css">
 </head>
 <body>
 
   <!-- 히어로 섹션 -->
   <section class="hero-section fade-in">
-    <div class="flower-decoration top">🌸 🌸 🌸 🌸 🌸</div>
-
-    <div class="couple-photo">
-      <div class="photo-frame">
-        <div class="heart-icon">♡</div>
-      </div>
+    <div class="hero-title">WEDDING</div>
+    <div class="hero-names">
+      <div id="groom-name">김 준 수</div>
+      <div class="hero-separator">&</div>
+      <div id="bride-name">이 서 영</div>
     </div>
 
-    <div class="couple-names">
-      <span id="groom-firstname">준수</span>
-      <span class="ampersand">&</span>
-      <span id="bride-firstname">서영</span>
-    </div>
+    <div class="hero-date" id="wedding-date">2026. 03. 15 SAT</div>
+    <div class="hero-time" id="wedding-time">PM 2:00</div>
 
-    <div class="divider-dot">· · ·</div>
+    <div class="hero-venue" id="venue-name">그랜드 볼룸 3F</div>
 
-    <div class="wedding-date" id="hero-date">2026년 3월 15일</div>
-    <div class="wedding-time" id="hero-time">오후 2시</div>
-
-    <div class="wedding-venue" id="hero-venue">그랜드 웨딩홀</div>
-
-    <div class="flower-decoration bottom">🌸 🌸 🌸 🌸 🌸</div>
+    <div class="scroll-indicator">↓</div>
   </section>
-
-  <!-- SVG 웨이브 디바이더 -->
-  <div class="wave-divider">
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 Q300,40 600,20 T1200,0 L1200,120 L0,120 Z" fill="#FFF9F5"/>
-    </svg>
-  </div>
 
   <!-- 인사말 섹션 -->
   <section class="greeting-section fade-in">
     <div class="container">
-      <h2 class="greeting-title">♡ 소중한 분들께 ♡</h2>
+      <h2 class="greeting-title">초대합니다</h2>
 
       <p class="greeting-message" id="greeting-text">
-        사랑하는 두 사람이
-        인생의 새로운 여정을 시작하려 합니다.
-
-        함께 자리하시어
-        축복해 주시면
-        더없는 기쁨으로 간직하겠습니다.
+        저희 두 사람이
+        사랑으로 하나 되는 소중한 날을
+        함께해 주시면 큰 기쁨이 되겠습니다.
       </p>
-
-      <div class="divider-dot">· · ·</div>
 
       <div class="parents-info" id="parents-info">
         <div class="parent-group">
-          <div class="parent-role">신랑</div>
-          <div class="parent-name" id="groom-fullname">김준수</div>
-          <div class="parent-details">
-            아버지 <span id="groom-father">김철수</span> · 어머니 <span id="groom-mother">박영희</span>
-          </div>
+          <div class="parent-label">[신랑측 부모님]</div>
+          <div class="parent-names">아버지 김철수 · 어머니 박영희</div>
         </div>
 
         <div class="parent-group">
-          <div class="parent-role">신부</div>
-          <div class="parent-name" id="bride-fullname">이서영</div>
-          <div class="parent-details">
-            아버지 <span id="bride-father">이민호</span> · 어머니 <span id="bride-mother">최수진</span>
-          </div>
+          <div class="parent-label">[신부측 부모님]</div>
+          <div class="parent-names">아버지 이민호 · 어머니 최수진</div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- SVG 웨이브 디바이더 -->
-  <div class="wave-divider reverse">
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 Q300,40 600,20 T1200,0 L1200,120 L0,120 Z" fill="#FFFBF7"/>
-    </svg>
-  </div>
 
   <!-- 갤러리 섹션 -->
   <section class="gallery-section fade-in">
-    <div class="container">
-      <h2 class="gallery-title">♡ 우리의 순간 ♡</h2>
+    <div class="gallery-header">
+      <h2 class="gallery-title">GALLERY</h2>
+    </div>
 
-      <div class="gallery-container-wrapper">
-        <button class="gallery-nav-btn prev" id="gallery-prev">‹</button>
-        <div class="gallery-masonry" id="gallery-container">
-          <!-- JavaScript로 동적 생성 -->
-        </div>
-        <button class="gallery-nav-btn next" id="gallery-next">›</button>
-      </div>
-
-      <div class="gallery-indicators" id="gallery-indicators">
+    <div class="gallery-container-wrapper">
+      <button class="gallery-nav-btn prev" id="gallery-prev">‹</button>
+      <div class="gallery-scroll" id="gallery-container">
         <!-- JavaScript로 동적 생성 -->
       </div>
+      <button class="gallery-nav-btn next" id="gallery-next">›</button>
+    </div>
+
+    <div class="gallery-indicators" id="gallery-indicators">
+      <!-- JavaScript로 동적 생성 -->
     </div>
   </section>
-
-  <!-- SVG 웨이브 디바이더 -->
-  <div class="wave-divider">
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 Q300,40 600,20 T1200,0 L1200,120 L0,120 Z" fill="#FFF9F5"/>
-    </svg>
-  </div>
 
   <!-- 일시/장소 섹션 -->
   <section class="info-section fade-in">
     <div class="container">
-      <h2 class="info-title">♡ 예식 일시 및 장소 ♡</h2>
+      <h2 class="info-title">WHEN & WHERE</h2>
 
-      <div class="info-card date-card">
-        <div class="card-icon">📅</div>
-        <div class="card-content">
-          <div id="info-date">2026년 3월 15일</div>
-          <div id="info-time">토요일 오후 2시</div>
-        </div>
+      <div class="info-date" id="info-date">2026년 3월 15일 토요일</div>
+      <div class="info-time" id="info-time">오후 2시</div>
+
+      <div class="dday-box" id="dday">D - 48</div>
+
+      <div class="venue-info">
+        <div class="venue-name" id="info-venue-name">그랜드 웨딩홀</div>
+        <div class="venue-address" id="info-venue-address">서울시 강남구 테헤란로 123</div>
+        <div class="venue-floor" id="info-venue-floor">3층 그랜드 볼룸</div>
+        <div class="venue-tel" id="info-venue-tel">TEL. 02-1234-5678</div>
       </div>
 
-      <div class="dday-card" id="dday">
-        <span class="dday-flower">✿</span>
-        <span class="dday-text">D - 48</span>
-        <span class="dday-flower">✿</span>
-      </div>
-
-      <div class="info-card location-card">
-        <div class="card-icon">📍</div>
-        <div class="card-content">
-          <div class="venue-name" id="info-venue-name">그랜드 웨딩홀</div>
-          <div class="venue-address" id="info-venue-address">서울시 강남구 테헤란로 123</div>
-          <div class="venue-floor" id="info-venue-floor">3층 그랜드 볼룸</div>
-          <div class="venue-tel" id="info-venue-tel">TEL. 02-1234-5678</div>
-        </div>
-      </div>
-
-      <div class="map-card">
-        <div class="map-frame">
-          <div id="map" style="width:100%;height:100%;"></div>
-        </div>
+      <div class="map-container">
+        <div id="map" style="width:100%;height:100%;"></div>
       </div>
 
       <div class="nav-buttons">
-        <button class="btn btn-primary" onclick="openKakaoNavi()">
-          ♡ 카카오내비
+        <button class="btn btn-secondary" onclick="openKakaoNavi()">
+          카카오내비
         </button>
         <button class="btn btn-secondary" onclick="openTmapNavi()">
-          ♡ 티맵
+          티맵
         </button>
       </div>
     </div>
   </section>
 
-  <!-- SVG 웨이브 디바이더 -->
-  <div class="wave-divider reverse">
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 Q300,40 600,20 T1200,0 L1200,120 L0,120 Z" fill="#FFFBF7"/>
-    </svg>
-  </div>
-
   <!-- 계좌번호 섹션 -->
   <section class="account-section fade-in">
     <div class="container">
-      <h2 class="account-title">♡ 마음 전하실 곳 ♡</h2>
+      <h2 class="account-title">ACCOUNT</h2>
 
       <!-- 신랑측 -->
-      <div class="account-card groom-card">
-        <div class="card-header">♡ 신랑측</div>
-        <div class="card-body">
-          <div class="account-bank" id="groom-bank">카카오뱅크</div>
-          <div class="account-number" id="groom-number">3333-01-1234567</div>
-          <div class="account-holder" id="groom-holder">예금주: 김준수</div>
-          <button class="btn btn-primary btn-block copy-button" data-copy="3333-01-1234567">
-            ♡ 복사하기
-          </button>
+      <div class="accordion" id="groom-accordion">
+        <button class="accordion-header" onclick="toggleAccordion(this)">
+          <span>신랑측 마음 전하실 곳</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <div class="account-detail">
+            <div class="account-bank" id="groom-bank">카카오뱅크</div>
+            <div class="account-number" id="groom-number">3333-01-1234567</div>
+            <div class="account-holder" id="groom-holder">예금주: 김준수</div>
+            <button class="btn btn-primary btn-block copy-button" data-copy="3333-01-1234567">
+              복사하기
+            </button>
+            <!-- 카카오페이 송금 버튼 (선택사항) -->
+            <!-- <button class="btn btn-secondary btn-block kakaopay-button">
+              카카오페이 송금
+            </button> -->
+          </div>
         </div>
       </div>
 
       <!-- 신부측 -->
-      <div class="account-card bride-card">
-        <div class="card-header">♡ 신부측</div>
-        <div class="card-body">
-          <div class="account-bank" id="bride-bank">카카오뱅크</div>
-          <div class="account-number" id="bride-number">3333-01-7654321</div>
-          <div class="account-holder" id="bride-holder">예금주: 이서영</div>
-          <button class="btn btn-primary btn-block copy-button" data-copy="3333-01-7654321">
-            ♡ 복사하기
-          </button>
+      <div class="accordion" id="bride-accordion">
+        <button class="accordion-header" onclick="toggleAccordion(this)">
+          <span>신부측 마음 전하실 곳</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <div class="account-detail">
+            <div class="account-bank" id="bride-bank">카카오뱅크</div>
+            <div class="account-number" id="bride-number">3333-01-7654321</div>
+            <div class="account-holder" id="bride-holder">예금주: 이서영</div>
+            <button class="btn btn-primary btn-block copy-button" data-copy="3333-01-7654321">
+              복사하기
+            </button>
+          </div>
         </div>
       </div>
-
-      <div class="flower-decoration footer">🌸 🌸 🌸 🌸 🌸</div>
-
-      <div class="footer-message">Thank you ♡</div>
     </div>
   </section>
 
@@ -241,6 +189,7 @@
 
   <!-- 페이지 로드 시 초기화 -->
   <script>
+    // config에서 데이터 읽어와서 HTML 업데이트
     document.addEventListener('DOMContentLoaded', () => {
       const config = window.weddingConfig;
 
@@ -254,26 +203,33 @@
       }
 
       // 신랑신부 이름
-      document.getElementById('groom-firstname').textContent = config.groom.firstName;
-      document.getElementById('bride-firstname').textContent = config.bride.firstName;
-      document.getElementById('groom-fullname').textContent = config.groom.name;
-      document.getElementById('bride-fullname').textContent = config.bride.name;
+      document.getElementById('groom-name').textContent = config.groom.name.split('').join(' ');
+      document.getElementById('bride-name').textContent = config.bride.name.split('').join(' ');
 
       // 날짜/시간/장소
-      document.getElementById('hero-date').textContent = config.wedding.dateString;
-      document.getElementById('hero-time').textContent = config.wedding.time;
-      document.getElementById('hero-venue').textContent = config.wedding.venue.name;
+      document.getElementById('wedding-date').textContent = config.wedding.dateString.replace(/년|월/g, '.').replace('일', '').replace('토요일', 'SAT');
+      document.getElementById('wedding-time').textContent = config.wedding.time.replace('오후', 'PM').replace('시', ':00');
+      document.getElementById('venue-name').textContent = config.wedding.venue.floor;
 
       // 인사말
       document.getElementById('greeting-text').textContent = config.message.main;
 
       // 부모님 정보
-      document.getElementById('groom-father').textContent = config.groom.father;
-      document.getElementById('groom-mother').textContent = config.groom.mother;
-      document.getElementById('bride-father').textContent = config.bride.father;
-      document.getElementById('bride-mother').textContent = config.bride.mother;
+      if (config.settings.showParents) {
+        const parentsHtml = `
+          <div class="parent-group">
+            <div class="parent-label">[신랑측 부모님]</div>
+            <div class="parent-names">아버지 ${config.groom.father} · 어머니 ${config.groom.mother}</div>
+          </div>
+          <div class="parent-group">
+            <div class="parent-label">[신부측 부모님]</div>
+            <div class="parent-names">아버지 ${config.bride.father} · 어머니 ${config.bride.mother}</div>
+          </div>
+        `;
+        document.getElementById('parents-info').innerHTML = parentsHtml;
+      }
 
-      // 갤러리 (수평 스크롤)
+      // 갤러리
       const galleryContainer = document.getElementById('gallery-container');
       const indicatorsContainer = document.getElementById('gallery-indicators');
 
@@ -353,12 +309,12 @@
       document.getElementById('groom-bank').textContent = config.groom.account.bank;
       document.getElementById('groom-number').textContent = config.groom.account.number;
       document.getElementById('groom-holder').textContent = `예금주: ${config.groom.account.holder}`;
-      document.querySelector('.groom-card .copy-button').setAttribute('data-copy', config.groom.account.number);
+      document.querySelector('#groom-accordion .copy-button').setAttribute('data-copy', config.groom.account.number);
 
       document.getElementById('bride-bank').textContent = config.bride.account.bank;
       document.getElementById('bride-number').textContent = config.bride.account.number;
       document.getElementById('bride-holder').textContent = `예금주: ${config.bride.account.holder}`;
-      document.querySelector('.bride-card .copy-button').setAttribute('data-copy', config.bride.account.number);
+      document.querySelector('#bride-accordion .copy-button').setAttribute('data-copy', config.bride.account.number);
     });
 
     // 길찾기 함수 (전역)

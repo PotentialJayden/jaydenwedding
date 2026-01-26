@@ -1,0 +1,446 @@
+/* ===================================
+   Seoul 템플릿 스타일 (toourguest.com)
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Seoul 템플릿 색상 - toourguest.com 스타일 */
+  --seoul-bg-primary: #D6D6D6;
+  --seoul-bg-secondary: #F0F0F0;
+  --seoul-bg-card: #FFFFFF;
+  --seoul-text-primary: #020817;
+  --seoul-text-secondary: #4A4A4A;
+  --seoul-accent: #999999;
+  --seoul-button-bg: #999999;
+  --seoul-button-text: #111111;
+  --seoul-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Suit', 'Noto Sans KR', sans-serif;
+  background-color: var(--seoul-bg-primary);
+  color: var(--seoul-text-primary);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* ===================================
+   히어로 섹션
+   =================================== */
+
+.hero-section {
+  background-color: var(--seoul-bg-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.hero-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-lg);
+  color: var(--seoul-text-primary);
+}
+
+.hero-names {
+  margin: var(--spacing-xl) 0;
+}
+
+.hero-names > div {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: var(--seoul-text-primary);
+}
+
+.hero-separator {
+  font-size: 24px;
+  margin: var(--spacing-sm) 0;
+  color: var(--seoul-text-secondary);
+}
+
+.hero-date,
+.hero-time {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--seoul-text-secondary);
+  margin: var(--spacing-xs) 0;
+}
+
+.hero-venue {
+  font-size: 16px;
+  color: var(--seoul-text-secondary);
+  margin-top: var(--spacing-md);
+}
+
+.scroll-indicator {
+  font-size: 24px;
+  color: var(--seoul-text-secondary);
+  margin-top: var(--spacing-xl);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* ===================================
+   인사말 섹션
+   =================================== */
+
+.greeting-section {
+  background-color: var(--seoul-bg-card);
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.greeting-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--seoul-text-primary);
+}
+
+.greeting-message {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--seoul-text-primary);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  white-space: pre-line;
+}
+
+.parents-info {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+}
+
+.parent-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.parent-label {
+  font-size: 15.2px;
+  font-weight: 400;
+  line-height: 22.8px;
+  color: var(--seoul-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.parent-names {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--seoul-text-primary);
+}
+
+/* ===================================
+   갤러리 섹션
+   =================================== */
+
+.gallery-section {
+  background-color: var(--seoul-bg-primary);
+  padding: var(--spacing-2xl) 0;
+}
+
+.gallery-header {
+  padding: 0 var(--spacing-md) var(--spacing-lg);
+}
+
+.gallery-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  color: var(--seoul-text-primary);
+}
+
+.gallery-container-wrapper {
+  position: relative;
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 0;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: center;
+  background-color: var(--seoul-bg-primary);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===================================
+   일시/장소 섹션
+   =================================== */
+
+.info-section {
+  background-color: var(--seoul-bg-card);
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--seoul-text-primary);
+}
+
+.info-date,
+.info-time {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: var(--seoul-text-primary);
+  margin: var(--spacing-xs) 0;
+}
+
+.dday-box {
+  background-color: var(--seoul-bg-secondary);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  margin: var(--spacing-xl) 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--seoul-text-primary);
+  box-shadow: var(--seoul-shadow);
+}
+
+.venue-info {
+  text-align: center;
+  margin: var(--spacing-xl) 0;
+}
+
+.venue-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--seoul-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.venue-address,
+.venue-floor,
+.venue-tel {
+  font-size: 15.2px;
+  font-weight: 400;
+  line-height: 22.8px;
+  color: var(--seoul-text-secondary);
+  margin: var(--spacing-xs) 0;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: var(--spacing-xl) 0;
+  box-shadow: var(--seoul-shadow);
+}
+
+.nav-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+  margin-top: 48px;
+}
+
+/* ===================================
+   계좌번호 섹션
+   =================================== */
+
+.account-section {
+  background-color: var(--seoul-bg-primary);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  padding-bottom: 120px;
+}
+
+.account-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--seoul-text-primary);
+}
+
+.accordion {
+  background-color: var(--seoul-bg-card);
+  border-radius: 12px;
+  margin-bottom: var(--spacing-md);
+  overflow: hidden;
+  box-shadow: var(--seoul-shadow);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--seoul-bg-card);
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15.2px;
+  font-weight: 400;
+  color: var(--seoul-text-primary);
+  transition: background-color var(--transition-base);
+}
+
+.accordion-header:hover {
+  background-color: var(--seoul-bg-secondary);
+}
+
+.accordion-icon {
+  transition: transform var(--transition-base);
+}
+
+.accordion-header.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-base);
+}
+
+.accordion-content.active {
+  max-height: 500px;
+}
+
+.account-detail {
+  padding: var(--spacing-md);
+  background-color: var(--seoul-bg-card);
+}
+
+.account-bank {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--seoul-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.account-number {
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: var(--seoul-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.account-holder {
+  font-size: 14px;
+  color: var(--seoul-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ===================================
+   버튼 스타일
+   =================================== */
+
+.btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  border-radius: 8px;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--seoul-button-bg);
+  color: var(--seoul-button-text);
+}
+
+.btn-primary:hover {
+  background-color: #888888;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--seoul-button-bg);
+  color: var(--seoul-button-text);
+}
+
+.btn-secondary:hover {
+  background-color: #888888;
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+/* CTA 버튼 (하단 고정) */
+.cta-container {
+  background-color: var(--seoul-bg-card);
+  border-top: 1px solid var(--seoul-bg-secondary);
+}
+
+.cta-container .btn {
+  margin-top: 0;
+}
+
+/* ===================================
+   반응형
+   =================================== */
+
+@media (max-width: 768px) {
+  .hero-names > div {
+    font-size: 36px;
+  }
+
+  .nav-buttons {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-names > div {
+    font-size: 32px;
+    letter-spacing: 6px;
+  }
+
+  .nav-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================
+   아코디언 토글 스크립트
+   =================================== */
+
+/* JavaScript에서 처리: toggleAccordion() */
