@@ -30,19 +30,43 @@
 
   <!-- 히어로 섹션 -->
   <section class="hero-section fade-in">
-    <div class="hero-title">WEDDING</div>
-    <div class="hero-names">
-      <div id="groom-name">김 준 수</div>
-      <div class="hero-separator">&</div>
-      <div id="bride-name">이 서 영</div>
+    <!-- 신랑 사진 -->
+    <div class="hero-photo">
+      <img id="groom-photo" src="images/gallery/photo1.jpg" alt="신랑 사진">
     </div>
 
-    <div class="hero-date" id="wedding-date">2026. 03. 15 SAT</div>
-    <div class="hero-time" id="wedding-time">PM 2:00</div>
+    <!-- 신부 사진 -->
+    <div class="hero-photo">
+      <img id="bride-photo" src="images/gallery/photo2.jpg" alt="신부 사진">
+    </div>
 
-    <div class="hero-venue" id="venue-name">그랜드 볼룸 3F</div>
+    <!-- 이름 -->
+    <div class="hero-names-simple">
+      <span id="groom-first-name">지성</span> & <span id="bride-first-name">유진</span>
+    </div>
 
-    <div class="scroll-indicator">↓</div>
+    <!-- 인사 메시지 -->
+    <div class="hero-message" id="hero-message">
+      저희 두 사람이 사랑으로 하나 되는<br>
+      소중한 날을 함께해 주시면<br>
+      큰 기쁨이 되겠습니다.
+    </div>
+
+    <!-- 날짜/시간/장소 버튼 -->
+    <div class="hero-info-buttons">
+      <button class="info-btn" id="hero-date-btn">
+        <div class="info-label">날짜</div>
+        <div class="info-value" id="hero-date-value">2026년 3월 15일 토요일</div>
+      </button>
+      <button class="info-btn" id="hero-location-btn">
+        <div class="info-label">장소</div>
+        <div class="info-value" id="hero-location-value">그랜드 웨딩홀</div>
+      </button>
+      <button class="info-btn" id="hero-map-btn" onclick="document.querySelector('.info-section').scrollIntoView({behavior: 'smooth'})">
+        <div class="info-label">위치</div>
+        <div class="info-value">지도 보기</div>
+      </button>
+    </div>
   </section>
 
   <!-- 인사말 섹션 -->
@@ -202,14 +226,22 @@
         document.getElementById('og-url').setAttribute('content', config.og.url);
       }
 
-      // 신랑신부 이름
-      document.getElementById('groom-name').textContent = config.groom.name.split('').join(' ');
-      document.getElementById('bride-name').textContent = config.bride.name.split('').join(' ');
+      // 히어로 사진
+      if (config.gallery.length >= 2) {
+        document.getElementById('groom-photo').src = config.gallery[0];
+        document.getElementById('bride-photo').src = config.gallery[1];
+      }
 
-      // 날짜/시간/장소
-      document.getElementById('wedding-date').textContent = config.wedding.dateString.replace(/년|월/g, '.').replace('일', '').replace('토요일', 'SAT');
-      document.getElementById('wedding-time').textContent = config.wedding.time.replace('오후', 'PM').replace('시', ':00');
-      document.getElementById('venue-name').textContent = config.wedding.venue.floor;
+      // 신랑신부 이름 (간단한 형식)
+      document.getElementById('groom-first-name').textContent = config.groom.firstName || config.groom.name;
+      document.getElementById('bride-first-name').textContent = config.bride.firstName || config.bride.name;
+
+      // 히어로 메시지
+      document.getElementById('hero-message').innerHTML = config.message.main.replace(/\n/g, '<br>');
+
+      // 히어로 정보 버튼
+      document.getElementById('hero-date-value').textContent = config.wedding.dateString;
+      document.getElementById('hero-location-value').textContent = config.wedding.venue.name;
 
       // 인사말
       document.getElementById('greeting-text').textContent = config.message.main;
