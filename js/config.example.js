@@ -84,7 +84,7 @@ const weddingConfig = {
   kakaoMap: {
     // 카카오 디벨로퍼스에서 발급받은 JavaScript 키를 입력하세요
     // https://developers.kakao.com/ 에서 앱 생성 후 키 발급
-    appKey: "9405f0ae72c7775005cbfb5905b8b352",
+    appKey: "YOUR_KAKAO_JAVASCRIPT_API_KEY_HERE",
 
     // 웨딩홀 위치 (위도, 경도)
     // 카카오맵에서 장소 검색 후 좌표를 복사하거나
@@ -100,7 +100,7 @@ const weddingConfig = {
   // 카카오톡 공유하기 설정
   kakaoShare: {
     // 카카오 디벨로퍼스에서 발급받은 JavaScript 키 (kakaoMap.appKey와 동일)
-    appKey: "9405f0ae72c7775005cbfb5905b8b352",
+    appKey: "YOUR_KAKAO_JAVASCRIPT_API_KEY_HERE",
 
     // 공유 메시지 설정
     title: "정지성 ♥ 전유진 결혼합니다",
