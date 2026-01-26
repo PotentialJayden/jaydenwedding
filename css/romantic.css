@@ -1,0 +1,517 @@
+/* ===================================
+   감성/로맨틱 템플릿 스타일
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+:root {
+  /* 로맨틱 템플릿 색상 */
+  --romantic-bg-primary: #FFF9F5;
+  --romantic-bg-secondary: #FFFBF7;
+  --romantic-text-primary: #4A4A4A;
+  --romantic-text-secondary: #8B7D6B;
+  --romantic-pink: #FFD4D4;
+  --romantic-blue: #D4E5FF;
+  --romantic-gold: #D4AF37;
+  --romantic-flower: #FFE5E5;
+  --romantic-border: #F0E6DC;
+  --romantic-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+body {
+  font-family: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+  background-color: var(--romantic-bg-primary);
+  color: var(--romantic-text-primary);
+}
+
+/* ===================================
+   히어로 섹션
+   =================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--romantic-bg-secondary);
+  position: relative;
+}
+
+.flower-decoration {
+  font-size: 20px;
+  letter-spacing: 8px;
+  color: var(--romantic-pink);
+  margin: var(--spacing-lg) 0;
+}
+
+.flower-decoration.top {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.flower-decoration.bottom {
+  margin-top: var(--spacing-2xl);
+}
+
+.flower-decoration.footer {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.couple-photo {
+  margin-bottom: var(--spacing-xl);
+}
+
+.photo-frame {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--romantic-pink) 0%, var(--romantic-blue) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--romantic-shadow);
+  position: relative;
+}
+
+.heart-icon {
+  font-size: 48px;
+  color: #fff;
+}
+
+.couple-names {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: var(--spacing-md);
+  color: var(--romantic-text-primary);
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.couple-names .ampersand {
+  font-size: 28px;
+  margin: 0 var(--spacing-sm);
+  color: var(--romantic-gold);
+  font-style: italic;
+}
+
+.divider-dot {
+  font-size: 18px;
+  color: var(--romantic-gold);
+  margin: var(--spacing-md) 0;
+  letter-spacing: 4px;
+}
+
+.wedding-date {
+  font-size: 16px;
+  color: var(--romantic-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.wedding-time {
+  font-size: 16px;
+  color: var(--romantic-gold);
+  margin-bottom: var(--spacing-md);
+}
+
+.wedding-venue {
+  font-size: 14px;
+  color: var(--romantic-text-secondary);
+}
+
+/* ===================================
+   웨이브 디바이더
+   =================================== */
+
+.wave-divider {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.wave-divider.reverse svg {
+  transform: rotate(180deg);
+}
+
+/* ===================================
+   인사말 섹션
+   =================================== */
+
+.greeting-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--romantic-bg-primary);
+  text-align: center;
+}
+
+.greeting-title {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: var(--spacing-xl);
+  color: var(--romantic-text-primary);
+}
+
+.greeting-message {
+  font-size: 18px;
+  line-height: 2.0;
+  color: var(--romantic-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  white-space: pre-line;
+}
+
+.parents-info {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.parent-group {
+  text-align: center;
+}
+
+.parent-role {
+  font-size: 14px;
+  color: var(--romantic-gold);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
+.parent-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--romantic-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.parent-details {
+  font-size: 14px;
+  color: var(--romantic-text-secondary);
+}
+
+/* ===================================
+   갤러리 섹션
+   =================================== */
+
+.gallery-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--romantic-bg-secondary);
+}
+
+.gallery-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--romantic-text-primary);
+}
+
+.gallery-masonry {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  padding: 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: var(--spacing-md);
+}
+
+.gallery-masonry::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  scroll-snap-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item:hover {
+  transform: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Masonry 높이 변화 - 수평 스크롤에서는 불필요 */
+.gallery-item.tall,
+.gallery-item.medium,
+.gallery-item.short {
+  /* 스타일 제거 */
+}
+
+.gallery-hint {
+  text-align: center;
+  font-size: 14px;
+  color: var(--romantic-text-secondary);
+  font-style: italic;
+}
+
+/* ===================================
+   일시/장소 섹션
+   =================================== */
+
+.info-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--romantic-bg-primary);
+}
+
+.info-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--romantic-text-primary);
+}
+
+.info-card {
+  background-color: #000;
+  border-radius: 16px;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--romantic-shadow);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.info-card.date-card {
+  background: linear-gradient(135deg, var(--romantic-pink) 0%, #fff 100%);
+}
+
+.info-card.location-card {
+  background: linear-gradient(135deg, var(--romantic-blue) 0%, #fff 100%);
+}
+
+.card-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-content > div {
+  font-size: 16px;
+  color: var(--romantic-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.card-content > div:last-child {
+  margin-bottom: 0;
+}
+
+.venue-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--romantic-text-primary);
+}
+
+.venue-address,
+.venue-floor,
+.venue-tel {
+  font-size: 14px;
+  color: var(--romantic-text-secondary);
+}
+
+.dday-card {
+  background-color: #000;
+  border: 2px solid var(--romantic-gold);
+  border-radius: 16px;
+  padding: var(--spacing-lg);
+  margin: var(--spacing-xl) auto;
+  text-align: center;
+  box-shadow: var(--romantic-shadow);
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+}
+
+.dday-flower {
+  font-size: 24px;
+  color: var(--romantic-gold);
+  margin: 0 var(--spacing-sm);
+}
+
+.dday-text {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--romantic-text-primary);
+  margin: 0 var(--spacing-md);
+}
+
+.map-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--romantic-shadow);
+  margin: var(--spacing-lg) 0;
+  border: 4px solid var(--romantic-border);
+}
+
+.map-frame {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.nav-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+/* ===================================
+   계좌번호 섹션
+   =================================== */
+
+.account-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--romantic-bg-secondary);
+  padding-bottom: 120px; /* CTA 버튼 공간 확보 */
+}
+
+.account-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--romantic-text-primary);
+}
+
+.account-card {
+  background-color: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--romantic-shadow);
+}
+
+.account-card.groom-card {
+  background: linear-gradient(to bottom, var(--romantic-pink) 0%, #fff 30%);
+}
+
+.account-card.bride-card {
+  background: linear-gradient(to bottom, var(--romantic-blue) 0%, #fff 30%);
+}
+
+.card-header {
+  padding: var(--spacing-md);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--romantic-text-primary);
+}
+
+.card-body {
+  padding: var(--spacing-lg);
+  background-color: #000;
+}
+
+.account-bank {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  color: var(--romantic-text-primary);
+}
+
+.account-number {
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  color: var(--romantic-text-primary);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.account-holder {
+  font-size: 14px;
+  color: var(--romantic-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-message {
+  text-align: center;
+  font-size: 18px;
+  color: var(--romantic-gold);
+  margin-top: var(--spacing-md);
+  font-style: italic;
+}
+
+/* ===================================
+   버튼 스타일 오버라이드
+   =================================== */
+
+.romantic-section .btn.btn-primary {
+  background: linear-gradient(135deg, var(--romantic-pink) 0%, var(--romantic-gold) 100%);
+  border: none;
+  color: var(--romantic-text-primary);
+}
+
+.romantic-section .btn.btn-secondary {
+  background: linear-gradient(135deg, var(--romantic-blue) 0%, #fff 100%);
+  border: 1px solid var(--romantic-border);
+  color: var(--romantic-text-primary);
+}
+
+/* ===================================
+   반응형
+   =================================== */
+
+@media (max-width: 768px) {
+  .couple-names {
+    font-size: 32px;
+  }
+
+  .gallery-masonry {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .couple-names {
+    font-size: 28px;
+  }
+
+  .photo-frame {
+    width: 120px;
+    height: 120px;
+  }
+
+  .heart-icon {
+    font-size: 36px;
+  }
+
+  .greeting-title,
+  .info-title,
+  .account-title,
+  .gallery-title {
+    font-size: 22px;
+  }
+
+  .nav-buttons {
+    grid-template-columns: 1fr;
+  }
+}

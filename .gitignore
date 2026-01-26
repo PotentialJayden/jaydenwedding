@@ -1,0 +1,12 @@
+# Claude Code files
+.claude/
+
+# macOS
+.DS_Store
+
+# Node modules (if any)
+node_modules/
+
+# Editor
+.vscode/
+.idea/

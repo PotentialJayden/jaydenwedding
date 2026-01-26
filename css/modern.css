@@ -1,0 +1,437 @@
+/* ===================================
+   모던/미니멀 템플릿 스타일
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* 모던 템플릿 색상 */
+  --modern-bg-primary: #FFFFFF;
+  --modern-bg-secondary: #F8F8F8;
+  --modern-text-primary: #1A1A1A;
+  --modern-text-secondary: #666666;
+  --modern-accent: #2C2C2C;
+  --modern-border: #E0E0E0;
+  --modern-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--modern-bg-primary);
+  color: var(--modern-text-primary);
+}
+
+/* ===================================
+   헤더/메인 섹션
+   =================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--modern-bg-primary);
+}
+
+.hero-title {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xl);
+  color: var(--modern-text-secondary);
+}
+
+.hero-names {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+  color: var(--modern-text-primary);
+}
+
+.hero-separator {
+  font-size: 48px;
+  font-weight: 300;
+  margin: var(--spacing-md) 0;
+  color: var(--modern-text-secondary);
+}
+
+.hero-date {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--modern-text-secondary);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: 2px;
+}
+
+.hero-time {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--modern-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: 2px;
+}
+
+.hero-venue {
+  font-size: 16px;
+  color: var(--modern-text-secondary);
+  font-weight: 400;
+  margin-top: var(--spacing-lg);
+}
+
+.scroll-indicator {
+  margin-top: auto;
+  padding-bottom: var(--spacing-xl);
+  font-size: 24px;
+  color: var(--modern-text-secondary);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* ===================================
+   인사말 섹션
+   =================================== */
+
+.greeting-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--modern-bg-primary);
+}
+
+.greeting-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+  color: var(--modern-text-primary);
+}
+
+.greeting-message {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--modern-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  white-space: pre-line;
+  text-align: left;
+}
+
+.parents-info {
+  margin-top: var(--spacing-xl);
+  text-align: left;
+}
+
+.parent-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.parent-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--modern-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.parent-names {
+  font-size: 16px;
+  color: var(--modern-text-primary);
+}
+
+/* ===================================
+   갤러리 섹션
+   =================================== */
+
+.gallery-section {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--modern-bg-secondary);
+}
+
+.gallery-header {
+  padding: 0 var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.gallery-title {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--modern-text-primary);
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  padding: 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  scroll-snap-align: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--spacing-lg);
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--modern-border);
+  transition: background-color var(--transition-fast);
+}
+
+.indicator-dot.active {
+  background-color: var(--modern-accent);
+}
+
+/* ===================================
+   일시/장소 섹션
+   =================================== */
+
+.info-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--modern-bg-primary);
+}
+
+.info-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xl);
+  text-align: left;
+}
+
+.info-date {
+  font-size: 18px;
+  color: var(--modern-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.info-time {
+  font-size: 18px;
+  color: var(--modern-text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.dday-box {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 1px solid var(--modern-border);
+  margin-bottom: var(--spacing-xl);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--modern-text-primary);
+}
+
+.venue-info {
+  margin-top: var(--spacing-xl);
+  line-height: 1.8;
+}
+
+.venue-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.venue-address,
+.venue-floor,
+.venue-tel {
+  font-size: 16px;
+  color: var(--modern-text-secondary);
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  margin: var(--spacing-lg) 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+/* ===================================
+   계좌번호 섹션
+   =================================== */
+
+.account-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--modern-bg-secondary);
+  padding-bottom: 120px; /* CTA 버튼 공간 확보 */
+}
+
+.account-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xl);
+  text-align: left;
+}
+
+.accordion {
+  margin-bottom: var(--spacing-sm);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--modern-bg-primary);
+  border: 1px solid var(--modern-border);
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header:hover {
+  background-color: var(--modern-bg-secondary);
+}
+
+.accordion-icon {
+  transition: transform var(--transition-fast);
+}
+
+.accordion.open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-base);
+  background-color: var(--modern-bg-primary);
+  border: 1px solid var(--modern-border);
+  border-top: none;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+}
+
+.account-detail {
+  padding: var(--spacing-md);
+}
+
+.account-bank {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.account-number {
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  color: var(--modern-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.account-holder {
+  font-size: 14px;
+  color: var(--modern-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.copy-button {
+  width: 100%;
+  padding: var(--spacing-sm);
+  background-color: var(--modern-accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.copy-button:hover {
+  background-color: #000;
+}
+
+.kakaopay-button {
+  margin-top: var(--spacing-sm);
+}
+
+/* ===================================
+   반응형
+   =================================== */
+
+@media (max-width: 768px) {
+  .hero-names {
+    font-size: 56px;
+  }
+
+  .hero-separator {
+    font-size: 36px;
+  }
+
+  .hero-date,
+  .hero-time {
+    font-size: 16px;
+  }
+
+  .gallery-item {
+    flex: 0 0 240px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-names {
+    font-size: 48px;
+  }
+
+  .hero-separator {
+    font-size: 32px;
+  }
+
+  .greeting-title,
+  .info-title,
+  .account-title {
+    font-size: 24px;
+  }
+
+  .nav-buttons {
+    grid-template-columns: 1fr;
+  }
+}

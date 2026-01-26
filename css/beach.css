@@ -1,0 +1,586 @@
+/* ===================================
+   비치/서머 템플릿 스타일
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap');
+
+:root {
+  /* 비치 템플릿 색상 */
+  --beach-bg-primary: #FFFFFF;
+  --beach-bg-secondary: #F0F8FF;
+  --beach-blue: #2C5282;
+  --beach-blue-light: #4299E1;
+  --beach-blue-lighter: #E6F2FF;
+  --beach-sand: #F5E6D3;
+  --beach-wave: #81C9E8;
+  --beach-sun: #FFD700;
+  --beach-shadow: 0 4px 14px rgba(44,82,130,0.12);
+}
+
+body {
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+  background: linear-gradient(180deg, var(--beach-bg-secondary) 0%, var(--beach-bg-primary) 50%);
+  color: var(--beach-blue);
+}
+
+/* ===================================
+   히어로 섹션
+   =================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background: linear-gradient(180deg, #E6F2FF 0%, #F0F8FF 50%, #FFFFFF 100%);
+  position: relative;
+}
+
+.beach-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--beach-blue);
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: 2px;
+}
+
+.sun-icon {
+  font-size: 56px;
+  margin-bottom: var(--spacing-lg);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.couple-names-beach {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--beach-blue);
+  margin-bottom: var(--spacing-md);
+}
+
+.couple-names-beach > div {
+  margin: var(--spacing-xs) 0;
+}
+
+.heart-beach {
+  font-size: 28px;
+  color: var(--beach-sun);
+  margin: var(--spacing-sm) 0;
+}
+
+.wave-divider-text {
+  font-size: 18px;
+  color: var(--beach-wave);
+  margin: var(--spacing-md) 0;
+  letter-spacing: 2px;
+}
+
+.wave-text-small {
+  font-size: 14px;
+  color: var(--beach-wave);
+  text-align: center;
+  margin: var(--spacing-md) 0;
+  letter-spacing: 2px;
+}
+
+.wedding-date-beach {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--beach-blue-light);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: 2px;
+}
+
+.wedding-time-beach {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--beach-blue-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+.wedding-venue-beach {
+  font-size: 16px;
+  color: var(--beach-blue);
+  font-weight: 400;
+  margin-bottom: var(--spacing-lg);
+}
+
+.anchor-icon {
+  font-size: 36px;
+  color: var(--beach-blue);
+  margin-top: var(--spacing-md);
+}
+
+.anchor-divider {
+  font-size: 32px;
+  color: var(--beach-blue);
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+}
+
+/* ===================================
+   파도 디바이더
+   =================================== */
+
+.wave-divider-svg {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider-svg svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.wave-divider-svg.reverse svg {
+  transform: rotate(180deg);
+}
+
+/* ===================================
+   인사말 섹션
+   =================================== */
+
+.greeting-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--beach-bg-secondary);
+  text-align: center;
+}
+
+.greeting-title-beach {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xl);
+  color: var(--beach-blue);
+}
+
+.greeting-message-beach {
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--beach-blue-light);
+  margin-bottom: var(--spacing-xl);
+  white-space: pre-line;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.parents-info-beach {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.parent-card-beach {
+  background-color: #000;
+  border-radius: 20px;
+  padding: var(--spacing-lg);
+  box-shadow: var(--beach-shadow);
+  transition: transform var(--transition-base);
+}
+
+.parent-card-beach:hover {
+  transform: translateY(-4px);
+}
+
+.parent-card-beach.groom-parent {
+  background: linear-gradient(135deg, var(--beach-blue-lighter) 0%, var(--beach-bg-primary) 50%);
+}
+
+.parent-card-beach.bride-parent {
+  background: linear-gradient(135deg, var(--beach-sand) 0%, var(--beach-bg-primary) 50%);
+}
+
+.parent-label-beach {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--beach-blue-light);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.parent-name-beach {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--beach-blue);
+  margin-bottom: var(--spacing-xs);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.parent-detail-beach {
+  font-size: 14px;
+  color: var(--beach-blue-light);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.shell-decoration {
+  font-size: 24px;
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  letter-spacing: 12px;
+}
+
+/* ===================================
+   갤러리 섹션
+   =================================== */
+
+.gallery-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: #000;
+}
+
+.gallery-title-beach {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  color: var(--beach-blue);
+}
+
+.gallery-float {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  padding: 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin: var(--spacing-lg) 0;
+}
+
+.gallery-float::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item-beach {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  scroll-snap-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.gallery-item-beach:hover {
+  transform: none;
+}
+
+.gallery-item-beach img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 크기 변화 - 수평 스크롤에서는 불필요 */
+.gallery-item-beach.large,
+.gallery-item-beach.medium,
+.gallery-item-beach.small {
+  /* 스타일 제거 */
+}
+
+/* ===================================
+   일시/장소 섹션
+   =================================== */
+
+.info-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: var(--beach-bg-secondary);
+}
+
+.info-title-beach {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--beach-blue);
+}
+
+.info-card-beach {
+  background-color: #000;
+  border-radius: 20px;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--beach-shadow);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: transform var(--transition-base);
+}
+
+.info-card-beach:hover {
+  transform: translateY(-4px);
+}
+
+.sky-card {
+  background: linear-gradient(135deg, var(--beach-blue-lighter) 0%, var(--beach-bg-primary) 60%);
+}
+
+.sand-card {
+  background: linear-gradient(135deg, var(--beach-sand) 0%, var(--beach-bg-primary) 60%);
+}
+
+.card-icon-beach {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.card-text-beach {
+  flex: 1;
+}
+
+.card-text-beach > div {
+  font-size: 16px;
+  color: var(--beach-blue);
+  margin-bottom: var(--spacing-xs);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.card-text-beach > div:last-child {
+  margin-bottom: 0;
+}
+
+.venue-name-beach {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--beach-blue);
+}
+
+.venue-address-beach,
+.venue-floor-beach,
+.venue-tel-beach {
+  font-size: 14px;
+  color: var(--beach-blue-light);
+}
+
+.dday-card-beach {
+  background: linear-gradient(135deg, var(--beach-wave) 0%, var(--beach-blue-lighter) 100%);
+  border-radius: 20px;
+  padding: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  text-align: center;
+  box-shadow: var(--beach-shadow);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--beach-blue);
+  letter-spacing: 2px;
+}
+
+.map-card-beach {
+  margin: var(--spacing-lg) 0;
+  position: relative;
+}
+
+.wave-border-top,
+.wave-border-bottom {
+  font-size: 16px;
+  text-align: center;
+  color: var(--beach-wave);
+  letter-spacing: 2px;
+  padding: var(--spacing-xs) 0;
+}
+
+.nav-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+/* ===================================
+   계좌번호 섹션
+   =================================== */
+
+.account-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background-color: #000;
+  padding-bottom: 120px; /* CTA 버튼 공간 확보 */
+}
+
+.account-title-beach {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--beach-blue);
+}
+
+.account-card-beach {
+  background-color: var(--beach-bg-secondary);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--beach-shadow);
+  transition: transform var(--transition-base);
+}
+
+.account-card-beach:hover {
+  transform: translateY(-4px);
+}
+
+.ocean-card {
+  background: linear-gradient(to bottom, var(--beach-blue-lighter) 0%, var(--beach-bg-secondary) 40%);
+}
+
+.sun-card {
+  background: linear-gradient(to bottom, var(--beach-sand) 0%, var(--beach-bg-secondary) 40%);
+}
+
+.card-header-beach {
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+
+.wave-icon,
+.sun-icon-small {
+  font-size: 28px;
+}
+
+.header-text-beach {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--beach-blue);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.card-body-beach {
+  padding: var(--spacing-lg);
+  background-color: #000;
+  text-align: center;
+}
+
+.account-card-beach .account-bank {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  color: var(--beach-blue);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.account-card-beach .account-number {
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  color: var(--beach-blue);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.account-card-beach .account-holder {
+  font-size: 14px;
+  color: var(--beach-blue-light);
+  margin-bottom: var(--spacing-md);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.beach-decoration {
+  font-size: 20px;
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  color: var(--beach-wave);
+  letter-spacing: 4px;
+}
+
+.footer-beach {
+  text-align: center;
+  font-size: 18px;
+  color: var(--beach-blue-light);
+  margin-top: var(--spacing-md);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* ===================================
+   버튼 스타일
+   =================================== */
+
+.btn.btn-beach-primary {
+  background: linear-gradient(135deg, var(--beach-blue) 0%, var(--beach-blue-light) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.btn.btn-beach-primary:hover {
+  background: linear-gradient(135deg, var(--beach-blue-light) 0%, var(--beach-wave) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44,82,130,0.3);
+}
+
+.btn.btn-beach-secondary {
+  background-color: #000;
+  color: var(--beach-blue);
+  border: 2px solid var(--beach-wave);
+  border-radius: 16px;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.btn.btn-beach-secondary:hover {
+  background-color: var(--beach-blue-lighter);
+  border-color: var(--beach-blue);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   반응형
+   =================================== */
+
+@media (max-width: 768px) {
+  .couple-names-beach {
+    font-size: 28px;
+  }
+
+  .sun-icon {
+    font-size: 48px;
+  }
+
+  .gallery-float {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .couple-names-beach {
+    font-size: 24px;
+  }
+
+  .sun-icon {
+    font-size: 40px;
+  }
+
+  .beach-title {
+    font-size: 18px;
+  }
+
+  .greeting-title-beach,
+  .gallery-title-beach,
+  .info-title-beach,
+  .account-title-beach {
+    font-size: 22px;
+  }
+
+  .nav-buttons {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모바일 청첩장 - 템플릿 선택</title>
+  <link rel="stylesheet" href="css/common.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    body {
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      padding: var(--spacing-xl) var(--spacing-md);
+
+      /* 템플릿 선택 페이지는 넓게 보이게 */
+      max-width: 1200px !important;
+      box-shadow: none !important;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: var(--spacing-2xl);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .header p {
+      font-size: 18px;
+      color: #7f8c8d;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .header .subtitle {
+      font-size: 14px;
+      color: #95a5a6;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .template-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .template-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .template-preview {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 48px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .template-preview.modern {
+      background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%);
+    }
+
+    .template-preview.romantic {
+      background: linear-gradient(135deg, #FFD4D4 0%, #D4E5FF 100%);
+    }
+
+    .template-preview.classic {
+      background: linear-gradient(135deg, #1B3A57 0%, #D4AF37 100%);
+    }
+
+    .template-preview.botanical {
+      background: linear-gradient(135deg, #7FA77F 0%, #E8F5E8 100%);
+    }
+
+    .template-preview.beach {
+      background: linear-gradient(135deg, #81C9E8 0%, #F5E6D3 100%);
+    }
+
+    .template-preview::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .template-card:hover .template-preview::after {
+      opacity: 1;
+    }
+
+    .template-info {
+      padding: var(--spacing-lg);
+    }
+
+    .template-name {
+      font-size: 24px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .template-description {
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.6;
+    }
+
+    .template-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .tag {
+      padding: 4px 12px;
+      background: #ecf0f1;
+      border-radius: 12px;
+      font-size: 12px;
+      color: #34495e;
+    }
+
+    .view-button {
+      width: 100%;
+      padding: var(--spacing-md);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .modern .view-button {
+      background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
+    }
+
+    .romantic .view-button {
+      background: linear-gradient(135deg, #FFD4D4 0%, #D4AF37 100%);
+    }
+
+    .classic .view-button {
+      background: linear-gradient(135deg, #1B3A57 0%, #D4AF37 100%);
+    }
+
+    .botanical .view-button {
+      background: linear-gradient(135deg, #5A7A58 0%, #7FA77F 100%);
+    }
+
+    .beach .view-button {
+      background: linear-gradient(135deg, #2C5282 0%, #81C9E8 100%);
+    }
+
+    .footer {
+      text-align: center;
+      padding: var(--spacing-2xl) 0;
+      color: #7f8c8d;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 28px;
+      }
+
+      .header p {
+        font-size: 16px;
+      }
+
+      .template-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎉 모바일 청첩장</h1>
+      <p>원하는 템플릿을 선택하세요</p>
+      <p class="subtitle">5가지 스타일 중 마음에 드는 디자인을 골라보세요</p>
+    </div>
+
+    <div class="template-grid">
+      <!-- 템플릿 1: 모던/미니멀 -->
+      <div class="template-card modern" onclick="window.location.href='template-modern.html'">
+        <div class="template-preview modern">
+          <div style="font-size: 64px; font-weight: 300;">M</div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">모던 / 미니멀</div>
+          <div class="template-description">
+            세련되고 깔끔한 디자인. 큰 여백과 왼쪽 정렬로 현대적인 느낌을 살렸습니다.
+          </div>
+          <div class="template-tags">
+            <span class="tag">심플</span>
+            <span class="tag">세련됨</span>
+            <span class="tag">모던</span>
+          </div>
+          <button class="view-button">템플릿 보기</button>
+        </div>
+      </div>
+
+      <!-- 템플릿 2: 감성/로맨틱 -->
+      <div class="template-card romantic" onclick="window.location.href='template-romantic.html'">
+        <div class="template-preview romantic">
+          <div style="font-size: 64px;">♡</div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">감성 / 로맨틱</div>
+          <div class="template-description">
+            파스텔 톤과 부드러운 곡선. 따뜻하고 감성적인 분위기를 연출합니다.
+          </div>
+          <div class="template-tags">
+            <span class="tag">파스텔</span>
+            <span class="tag">따뜻함</span>
+            <span class="tag">감성</span>
+          </div>
+          <button class="view-button">템플릿 보기</button>
+        </div>
+      </div>
+
+      <!-- 템플릿 3: 클래식 엘레강스 -->
+      <div class="template-card classic" onclick="window.location.href='template-classic.html'">
+        <div class="template-preview classic">
+          <div style="font-size: 64px;">⚜️</div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">클래식 엘레강스</div>
+          <div class="template-description">
+            네이비와 골드의 조화. 격식있고 우아한 느낌의 전통적인 스타일입니다.
+          </div>
+          <div class="template-tags">
+            <span class="tag">우아함</span>
+            <span class="tag">전통</span>
+            <span class="tag">격식</span>
+          </div>
+          <button class="view-button">템플릿 보기</button>
+        </div>
+      </div>
+
+      <!-- 템플릿 4: 보타니컬 -->
+      <div class="template-card botanical" onclick="window.location.href='template-botanical.html'">
+        <div class="template-preview botanical">
+          <div style="font-size: 64px;">🌿</div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">보타니컬</div>
+          <div class="template-description">
+            자연스러운 그린 톤. 식물과 잎 모티브로 싱그러운 느낌을 전달합니다.
+          </div>
+          <div class="template-tags">
+            <span class="tag">자연</span>
+            <span class="tag">싱그러움</span>
+            <span class="tag">편안함</span>
+          </div>
+          <button class="view-button">템플릿 보기</button>
+        </div>
+      </div>
+
+      <!-- 템플릿 5: 비치/서머 -->
+      <div class="template-card beach" onclick="window.location.href='template-beach.html'">
+        <div class="template-preview beach">
+          <div style="font-size: 64px;">🌊</div>
+        </div>
+        <div class="template-info">
+          <div class="template-name">비치 / 서머</div>
+          <div class="template-description">
+            산뜻한 블루와 샌드 톤. 바다와 여름을 테마로 한 경쾌한 스타일입니다.
+          </div>
+          <div class="template-tags">
+            <span class="tag">산뜻함</span>
+            <span class="tag">경쾌함</span>
+            <span class="tag">여름</span>
+          </div>
+          <button class="view-button">템플릿 보기</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>모든 템플릿은 <strong>config.js</strong> 파일만 수정하면 사용할 수 있습니다.</p>
+      <p style="margin-top: 8px;">
+        <a href="README.md" target="_blank">사용 가이드</a> ·
+        자세한 커스터마이징 방법은 README를 참고하세요
+      </p>
+      <p style="margin-top: 16px; font-style: italic;">Made with ♥ by Claude Code</p>
+    </div>
+  </div>
+
+  <script>
+    // 페이드인 애니메이션
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.template-card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.5s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    });
+  </script>
+</body>
+</html>

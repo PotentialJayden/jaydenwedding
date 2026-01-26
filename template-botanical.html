@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO & Open Graph for KakaoTalk/Facebook sharing -->
+  <title id="page-title">김준수 ♥ 이서영 결혼합니다</title>
+  <meta name="description" content="2026년 3월 15일 토요일 오후 2시 | 그랜드 웨딩홀">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" id="og-title" content="김준수 ♥ 이서영 결혼합니다">
+  <meta property="og:description" id="og-description" content="2026년 3월 15일 토요일 오후 2시 | 그랜드 웨딩홀">
+  <meta property="og:image" id="og-image" content="https://your-domain.com/images/og-image.jpg">
+  <meta property="og:url" id="og-url" content="https://your-domain.com">
+
+  <!-- Kakao Maps API -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_KAKAO_MAP_API_KEY"></script>
+
+  <!-- Kakao SDK for sharing -->
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
+    integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8"
+    crossorigin="anonymous"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/botanical.css">
+</head>
+<body>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero-section fade-in">
+    <div class="leaf-decoration top-left">🌿</div>
+
+    <div class="couple-names-botanical">
+      <span id="groom-firstname">준수</span>
+      <span class="heart-botanical">♡</span>
+      <span id="bride-firstname">서영</span>
+    </div>
+
+    <div class="leaf-divider">🍃 2026. 03. 15 🍃</div>
+
+    <div class="wedding-message">우리, 결혼합니다</div>
+
+    <div class="leaf-decoration bottom-right">🌿</div>
+
+    <div class="couple-photo-botanical">
+      <div class="photo-circle">
+        <div class="photo-placeholder">🌸 사진 🌸</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 잎 디바이더 -->
+  <div class="botanical-divider">
+    🌿 🌿 🌿
+  </div>
+
+  <!-- 인사말 섹션 -->
+  <section class="greeting-section fade-in">
+    <div class="container">
+      <h2 class="greeting-title-botanical">🌱 소중한 분들께</h2>
+
+      <p class="greeting-message-botanical" id="greeting-text">
+        봄날의 따스한 햇살처럼
+        서로를 비추며 살아가겠습니다.
+
+        함께 자리하시어
+        축복해 주시면 감사하겠습니다.
+      </p>
+
+      <div class="leaf-divider-small">─ 🌿 ─</div>
+
+      <div class="parents-info-botanical" id="parents-info">
+        <div class="parent-group-botanical">
+          <div class="parent-label-botanical">신랑</div>
+          <div class="parent-name-botanical" id="groom-fullname">김준수</div>
+          <div class="parent-detail-botanical">
+            <span id="groom-father">김철수</span> · <span id="groom-mother">박영희</span>의 아들
+          </div>
+        </div>
+
+        <div class="parent-group-botanical">
+          <div class="parent-label-botanical">신부</div>
+          <div class="parent-name-botanical" id="bride-fullname">이서영</div>
+          <div class="parent-detail-botanical">
+            <span id="bride-father">이민호</span> · <span id="bride-mother">최수진</span>의 딸
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 잎 디바이더 -->
+  <div class="botanical-divider">
+    🍃 🍃 🍃
+  </div>
+
+  <!-- 갤러리 섹션 -->
+  <section class="gallery-section fade-in">
+    <div class="container">
+      <h2 class="gallery-title-botanical">🌿 Gallery</h2>
+
+      <div class="gallery-container-wrapper">
+        <button class="gallery-nav-btn prev" id="gallery-prev">‹</button>
+        <div class="gallery-organic" id="gallery-container">
+          <!-- JavaScript로 동적 생성 -->
+        </div>
+        <button class="gallery-nav-btn next" id="gallery-next">›</button>
+      </div>
+
+      <div class="gallery-indicators" id="gallery-indicators">
+        <!-- JavaScript로 동적 생성 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 잎 디바이더 -->
+  <div class="botanical-divider">
+    🌿 🌿 🌿
+  </div>
+
+  <!-- 일시/장소 섹션 -->
+  <section class="info-section fade-in">
+    <div class="container">
+      <h2 class="info-title-botanical">🌱 예식 안내</h2>
+
+      <div class="info-card-botanical date-card-botanical">
+        <div class="card-icon-botanical">📅</div>
+        <div class="card-content-botanical">
+          <div class="card-label">날짜</div>
+          <div id="info-date">2026년 3월 15일</div>
+          <div id="info-time">토요일 오후 2시</div>
+        </div>
+      </div>
+
+      <div class="dday-card-botanical" id="dday">
+        🌿 D - 48
+      </div>
+
+      <div class="info-card-botanical location-card-botanical">
+        <div class="card-icon-botanical">📍</div>
+        <div class="card-content-botanical">
+          <div class="card-label">장소</div>
+          <div class="venue-name-botanical" id="info-venue-name">그랜드 웨딩홀</div>
+          <div class="venue-address-botanical" id="info-venue-address">서울시 강남구 테헤란로 123</div>
+          <div class="venue-floor-botanical" id="info-venue-floor">3층 그랜드 볼룸</div>
+          <div class="venue-tel-botanical" id="info-venue-tel">TEL. 02-1234-5678</div>
+        </div>
+      </div>
+
+      <div class="map-card-botanical">
+        <div id="map" style="width:100%;height:100%;border-radius:20px;"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn btn-botanical-primary" onclick="openKakaoNavi()">
+          🌿 카카오내비
+        </button>
+        <button class="btn btn-botanical-secondary" onclick="openTmapNavi()">
+          🌿 티맵
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 잎 디바이더 -->
+  <div class="botanical-divider">
+    🍃 🍃 🍃
+  </div>
+
+  <!-- 계좌번호 섹션 -->
+  <section class="account-section fade-in">
+    <div class="container">
+      <h2 class="account-title-botanical">🌱 마음 전하실 곳</h2>
+
+      <div class="account-card-botanical groom-botanical">
+        <div class="card-header-botanical">
+          <div class="leaf-icon">🌿</div>
+          <div class="header-text">신랑측</div>
+        </div>
+        <div class="card-body-botanical">
+          <div class="account-bank" id="groom-bank">카카오뱅크</div>
+          <div class="account-number" id="groom-number">3333-01-1234567</div>
+          <div class="account-holder" id="groom-holder">김준수</div>
+          <button class="btn btn-botanical-primary btn-block copy-button" data-copy="3333-01-1234567">
+            복사하기
+          </button>
+        </div>
+      </div>
+
+      <div class="account-card-botanical bride-botanical">
+        <div class="card-header-botanical">
+          <div class="leaf-icon">🌿</div>
+          <div class="header-text">신부측</div>
+        </div>
+        <div class="card-body-botanical">
+          <div class="account-bank" id="bride-bank">카카오뱅크</div>
+          <div class="account-number" id="bride-number">3333-01-7654321</div>
+          <div class="account-holder" id="bride-holder">이서영</div>
+          <button class="btn btn-botanical-primary btn-block copy-button" data-copy="3333-01-7654321">
+            복사하기
+          </button>
+        </div>
+      </div>
+
+      <div class="leaf-trio">🌿 🍃 🌱</div>
+      <div class="footer-botanical">Thank you for coming</div>
+    </div>
+  </section>
+
+  <!-- CTA 버튼 (하단 고정) -->
+  <div class="cta-container" id="cta-container">
+    <!-- JavaScript로 동적 생성 -->
+  </div>
+
+  <!-- 갤러리 모달 -->
+  <div class="modal" id="gallery-modal">
+    <button class="modal-close">×</button>
+    <button class="modal-nav prev">‹</button>
+    <div class="modal-content">
+      <img id="modal-img" src="" alt="갤러리 이미지">
+    </div>
+    <button class="modal-nav next">›</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+
+  <!-- 페이지 로드 시 초기화 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const config = window.weddingConfig;
+
+      // Open Graph 메타태그 업데이트
+      if (config.og) {
+        document.getElementById('page-title').textContent = config.og.title;
+        document.getElementById('og-title').setAttribute('content', config.og.title);
+        document.getElementById('og-description').setAttribute('content', config.og.description);
+        document.getElementById('og-image').setAttribute('content', config.og.image);
+        document.getElementById('og-url').setAttribute('content', config.og.url);
+      }
+
+      // 신랑신부 이름
+      document.getElementById('groom-firstname').textContent = config.groom.firstName;
+      document.getElementById('bride-firstname').textContent = config.bride.firstName;
+      document.getElementById('groom-fullname').textContent = config.groom.name;
+      document.getElementById('bride-fullname').textContent = config.bride.name;
+
+      // 인사말
+      document.getElementById('greeting-text').textContent = config.message.main;
+
+      // 부모님 정보
+      document.getElementById('groom-father').textContent = config.groom.father;
+      document.getElementById('groom-mother').textContent = config.groom.mother;
+      document.getElementById('bride-father').textContent = config.bride.father;
+      document.getElementById('bride-mother').textContent = config.bride.mother;
+
+      // 갤러리 (수평 스크롤)
+      const galleryContainer = document.getElementById('gallery-container');
+      const indicatorsContainer = document.getElementById('gallery-indicators');
+
+      config.gallery.forEach((imgSrc, index) => {
+        // 갤러리 아이템
+        const item = document.createElement('div');
+        item.className = 'gallery-item-botanical';
+        item.innerHTML = `<img src="${imgSrc}" alt="갤러리 이미지 ${index + 1}" loading="lazy">`;
+        galleryContainer.appendChild(item);
+
+        // 인디케이터
+        const dot = document.createElement('div');
+        dot.className = 'indicator-dot' + (index === 0 ? ' active' : '');
+        indicatorsContainer.appendChild(dot);
+      });
+
+      // 네비게이션 버튼 상태 업데이트 함수
+      function updateNavButtons() {
+        const scrollLeft = galleryContainer.scrollLeft;
+        const maxScroll = galleryContainer.scrollWidth - galleryContainer.offsetWidth;
+
+        prevBtn.disabled = scrollLeft <= 1;
+        nextBtn.disabled = scrollLeft >= maxScroll - 1;
+
+        prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
+        nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
+        prevBtn.style.cursor = prevBtn.disabled ? 'default' : 'pointer';
+        nextBtn.style.cursor = nextBtn.disabled ? 'default' : 'pointer';
+      }
+
+      // 갤러리 스크롤 이벤트로 인디케이터 및 버튼 업데이트
+      galleryContainer.addEventListener('scroll', () => {
+        const scrollLeft = galleryContainer.scrollLeft;
+        const itemWidth = galleryContainer.offsetWidth;
+        const currentIndex = Math.round(scrollLeft / itemWidth);
+
+        const dots = indicatorsContainer.querySelectorAll('.indicator-dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+
+        updateNavButtons();
+      });
+
+      // 갤러리 네비게이션 버튼
+      const prevBtn = document.getElementById('gallery-prev');
+      const nextBtn = document.getElementById('gallery-next');
+
+      prevBtn.addEventListener('click', () => {
+        if (!prevBtn.disabled) {
+          const itemWidth = galleryContainer.offsetWidth;
+          galleryContainer.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (!nextBtn.disabled) {
+          const itemWidth = galleryContainer.offsetWidth;
+          galleryContainer.scrollBy({ left: itemWidth, behavior: 'smooth' });
+        }
+      });
+
+      // 초기 버튼 상태 설정
+      updateNavButtons();
+
+      // 일시/장소 정보
+      document.getElementById('info-date').textContent = config.wedding.dateString;
+      document.getElementById('info-time').textContent = config.wedding.time;
+      document.getElementById('info-venue-name').textContent = config.wedding.venue.name;
+      document.getElementById('info-venue-address').textContent = config.wedding.venue.address;
+      document.getElementById('info-venue-floor').textContent = config.wedding.venue.floor;
+      if (config.settings.showTel) {
+        document.getElementById('info-venue-tel').textContent = `TEL. ${config.wedding.venue.tel}`;
+      }
+
+      // 계좌번호
+      document.getElementById('groom-bank').textContent = config.groom.account.bank;
+      document.getElementById('groom-number').textContent = config.groom.account.number;
+      document.getElementById('groom-holder').textContent = config.groom.account.holder;
+      document.querySelectorAll('.copy-button')[0].setAttribute('data-copy', config.groom.account.number);
+
+      document.getElementById('bride-bank').textContent = config.bride.account.bank;
+      document.getElementById('bride-number').textContent = config.bride.account.number;
+      document.getElementById('bride-holder').textContent = config.bride.account.holder;
+      document.querySelectorAll('.copy-button')[1].setAttribute('data-copy', config.bride.account.number);
+    });
+
+    // 길찾기 함수 (전역)
+    function openKakaoNavi() {
+      const config = window.weddingConfig;
+      const { lat, lng } = config.kakaoMap;
+      const { name } = config.wedding.venue;
+      const url = `kakaomap://route?ep=${lat},${lng}&by=CAR`;
+      window.location.href = url;
+
+      setTimeout(() => {
+        window.open(`https://map.kakao.com/link/to/${name},${lat},${lng}`, '_blank');
+      }, 1500);
+    }
+
+    function openTmapNavi() {
+      const config = window.weddingConfig;
+      const { lat, lng } = config.kakaoMap;
+      const { name } = config.wedding.venue;
+      const url = `tmap://route?goalname=${encodeURIComponent(name)}&goalx=${lng}&goaly=${lat}`;
+      window.location.href = url;
+
+      setTimeout(() => {
+        window.open(`https://tmap.life/`, '_blank');
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
