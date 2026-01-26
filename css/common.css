@@ -357,12 +357,19 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
-  transition: background-color 0.3s;
+  z-index: 100;
+  transition: all 0.3s;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .gallery-nav-btn:hover {
   background-color: rgba(0,0,0,0.7);
+}
+
+.gallery-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .gallery-nav-btn.prev {
@@ -371,6 +378,31 @@ ul, ol {
 
 .gallery-nav-btn.next {
   right: 16px;
+}
+
+/* 갤러리 인디케이터 */
+.gallery-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  z-index: 50;
+  position: relative;
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.indicator-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.6);
 }
 
 @media (max-width: 768px) {
