@@ -83,7 +83,7 @@ const CONFIG = {
     groom: {
       role: "신랑",
       name: "지성",
-      nameEn: "JISUNG",
+      nameEn: "JISEONG",
       fullName: "정지성",
       phone: "010-9940-9879",
       father: {
