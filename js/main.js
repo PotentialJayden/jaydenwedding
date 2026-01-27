@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initGallery();
     initLocation();
     initAccount();
-    initFlower();
     initShare();
     initEnding();
     initFooter();
