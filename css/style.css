@@ -855,37 +855,18 @@ section {
     text-decoration: underline;
 }
 
-.map-static {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    min-height: 200px;
-    background: linear-gradient(135deg, #f8f6f4 0%, #ebe7e3 100%);
+.map-image-link {
+    display: block;
+    width: 100%;
     border-radius: 10px;
+    overflow: hidden;
 }
 
-.map-pin {
-    margin-bottom: 15px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.map-venue {
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.map-address {
-    font-size: 13px;
-    color: #666;
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
 }
 
 .map-buttons {

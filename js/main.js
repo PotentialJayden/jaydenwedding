@@ -357,18 +357,12 @@ function initLocation() {
     // 길안내 생성
     generateDirections();
 
-    // 정적 지도 표시 (API 키 불필요)
+    // 정적 지도 이미지 표시
     const mapContainer = document.getElementById('map');
     mapContainer.innerHTML = `
-        <div class="map-static">
-            <div class="map-pin">
-                <svg viewBox="0 0 24 24" fill="#D4A574" width="48" height="48">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-            </div>
-            <p class="map-venue">${location.venue.name}</p>
-            <p class="map-address">${location.venue.address}</p>
-        </div>
+        <a href="${location.mapLinks.kakao}" target="_blank" class="map-image-link">
+            <img src="images/map.png" alt="웨딩홀 위치 지도" class="map-image">
+        </a>
     `;
 }
 
