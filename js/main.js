@@ -336,6 +336,32 @@ function initGallery() {
             document.body.style.overflow = '';
         }
     });
+
+    // 터치 스와이프 이벤트 (모바일)
+    const modalContent = document.querySelector('#gallery-modal .modal-content');
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    modalContent.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modalContent.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const swipeDistance = touchEndX - touchStartX;
+        const minSwipeDistance = 50;
+
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance < 0) {
+                // 왼쪽으로 스와이프 → 다음 사진
+                currentIndex = (currentIndex + 1) % gallery.images.length;
+            } else {
+                // 오른쪽으로 스와이프 → 이전 사진
+                currentIndex = (currentIndex - 1 + gallery.images.length) % gallery.images.length;
+            }
+            document.getElementById('gallery-modal-img').src = getOriginalImagePath(gallery.images[currentIndex]);
+        }
+    }, { passive: true });
 }
 
 /**
