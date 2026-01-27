@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 메타 정보 (config에서 동적 설정) -->
+    <title id="page-title">결혼합니다</title>
+    <meta name="description" id="meta-description" content="">
+    <meta property="og:title" id="og-title" content="">
+    <meta property="og:description" id="og-description" content="">
+    <meta property="og:image" id="og-image" content="">
+    <meta property="og:type" content="website">
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 카카오 SDK -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"></script>
+
+    <!-- 카카오 지도는 config.js의 API 키로 동적 로드 -->
+</head>
+<body>
+    <main class="invitation-wrap">
+
+        <!-- ===== 커버 섹션 ===== -->
+        <section class="section-cover" id="cover">
+            <!-- 필름 스타일 커버 (세로 스트립) -->
+            <div class="cover-film">
+                <div class="film-strip">
+                    <!-- 꽃잎 애니메이션 -->
+                    <div class="petals-container">
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                    </div>
+                    <!-- 상단 날짜 -->
+                    <div class="film-top-date">
+                        <span class="date-day" id="cover-day">Sat</span>
+                        <span class="date-time" id="cover-time">12:00</span>
+                        <span class="date-ampm" id="cover-ampm">PM</span>
+                    </div>
+
+                    <!-- 첫번째 사진 -->
+                    <div class="film-image">
+                        <img src="" alt="커버 이미지 1" id="cover-img-1">
+                    </div>
+
+                    <!-- 두번째 사진 -->
+                    <div class="film-image">
+                        <img src="" alt="커버 이미지 2" id="cover-img-2">
+                    </div>
+
+                    <!-- 하단 정보 -->
+                    <div class="film-bottom-info">
+                        <span class="film-date-text" id="cover-bottom-line1">우리 결혼합니다</span>
+                        <span class="film-time-text" id="cover-bottom-line2">현욱 ♥ 주현</span>
+                    </div>
+
+                    <!-- 우측 날짜 (세로) -->
+                    <div class="film-side-date">
+                        <span id="cover-month">Mar</span>
+                        <span id="cover-date">7,</span>
+                        <span id="cover-year">2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 스크롤 힌트 -->
+            <div class="scroll-hint">
+                <span>scroll</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- ===== 인사말 섹션 ===== -->
+        <section class="section-greeting" id="greeting">
+            <div class="greeting-quote">
+                <div class="quote-lines" id="quote-lines">
+                    <!-- JS에서 동적 생성 -->
+                </div>
+                <p class="quote-author" id="quote-author"></p>
+            </div>
+
+            <div class="greeting-message">
+                <div class="message-lines" id="greeting-message">
+                    <!-- JS에서 동적 생성 -->
+                </div>
+                <p class="couple-intro" id="couple-intro"></p>
+            </div>
+        </section>
+
+        <!-- ===== 웨딩 날짜 섹션 ===== -->
+        <section class="section-date" id="wedding-date">
+            <h2 class="section-title" id="date-title">WEDDING DAY</h2>
+
+            <!-- D-day 카운터 -->
+            <div class="dday-counter">
+                <span class="dday-number" id="dday-number">0</span>
+                <span class="dday-text">일</span>
+            </div>
+
+            <!-- 날짜 표시 -->
+            <p class="date-korean" id="date-korean"></p>
+            <p class="date-english" id="date-english"></p>
+
+            <!-- 달력 -->
+            <div class="calendar-wrap" id="calendar">
+                <!-- JS에서 동적 생성 -->
+            </div>
+        </section>
+
+        <!-- ===== 신랑신부 정보 섹션 ===== -->
+        <section class="section-couple" id="couple">
+            <!-- 신랑 정보 -->
+            <div class="couple-card groom-card">
+                <span class="couple-role" id="groom-role">신랑</span>
+                <h3 class="couple-name" id="groom-name">현욱</h3>
+                <span class="couple-name-en" id="groom-name-en">WOOK</span>
+                <div class="couple-parents">
+                    <span id="groom-father"></span>
+                    <span class="dot">·</span>
+                    <span id="groom-mother"></span>
+                    <span class="relation" id="groom-relation">의 아들</span>
+                </div>
+            </div>
+
+            <!-- 신부 정보 -->
+            <div class="couple-card bride-card">
+                <span class="couple-role" id="bride-role">신부</span>
+                <h3 class="couple-name" id="bride-name">주현</h3>
+                <span class="couple-name-en" id="bride-name-en">JUHYUN</span>
+                <div class="couple-parents">
+                    <span id="bride-father"></span>
+                    <span class="dot">·</span>
+                    <span id="bride-mother"></span>
+                    <span class="relation" id="bride-relation">의 딸</span>
+                </div>
+            </div>
+
+            <!-- 연락하기 버튼 -->
+            <button class="contact-btn" id="contact-btn">
+                <span id="contact-btn-text">축하 연락하기</span>
+            </button>
+
+            <!-- 연락처 모달 -->
+            <div class="contact-modal" id="contact-modal">
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <h3>축하 연락하기</h3>
+                    <div class="contact-list" id="contact-list">
+                        <!-- JS에서 동적 생성 -->
+                    </div>
+                    <button class="modal-close" id="modal-close">닫기</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 갤러리 섹션 ===== -->
+        <section class="section-gallery" id="gallery">
+            <h2 class="section-title" id="gallery-title">GALLERY</h2>
+            <p class="section-subtitle" id="gallery-subtitle">사진을 클릭하시면 전체 화면 보기가 가능합니다</p>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- JS에서 동적 생성 -->
+            </div>
+        </section>
+
+        <!-- ===== 오시는 길 섹션 ===== -->
+        <section class="section-location" id="location">
+            <h2 class="section-title" id="location-title">LOCATION</h2>
+
+            <div class="venue-info">
+                <h3 class="venue-name" id="venue-name"></h3>
+                <p class="venue-hall" id="venue-hall"></p>
+                <p class="venue-address" id="venue-address"></p>
+            </div>
+
+            <!-- 지도 -->
+            <div class="map-container" id="map"></div>
+
+            <!-- 지도 버튼 -->
+            <div class="map-buttons">
+                <a href="#" class="map-btn kakao-map" id="kakao-map-link">
+                    <span>카카오맵 열기</span>
+                </a>
+                <a href="#" class="map-btn naver-map" id="naver-map-link">
+                    <span>네이버지도 열기</span>
+                </a>
+            </div>
+
+            <!-- 길안내 -->
+            <div class="directions" id="directions">
+                <!-- JS에서 동적 생성 -->
+            </div>
+        </section>
+
+        <!-- ===== 계좌번호 섹션 ===== -->
+        <section class="section-account" id="account">
+            <h2 class="section-title" id="account-title">마음 전하실 곳</h2>
+            <p class="section-subtitle" id="account-subtitle">축하의 마음을 전해주세요</p>
+
+            <!-- 신랑측 계좌 -->
+            <div class="account-group groom-account">
+                <h3 class="account-group-title" id="groom-account-title">신랑측 계좌번호</h3>
+                <div class="account-list" id="groom-account-list">
+                    <!-- JS에서 동적 생성 -->
+                </div>
+            </div>
+
+            <!-- 신부측 계좌 -->
+            <div class="account-group bride-account">
+                <h3 class="account-group-title" id="bride-account-title">신부측 계좌번호</h3>
+                <div class="account-list" id="bride-account-list">
+                    <!-- JS에서 동적 생성 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 화환 안내 섹션 ===== -->
+        <section class="section-flower" id="flower">
+            <img src="images/flower.png" alt="꽃" class="flower-image">
+            <h2 class="flower-title" id="flower-title">화환 안내</h2>
+            <p class="flower-message" id="flower-message"></p>
+        </section>
+
+        <!-- ===== 공유하기 섹션 ===== -->
+        <section class="section-share" id="share">
+            <button class="share-btn kakao-share" id="kakao-share">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M12 3C6.48 3 2 6.58 2 11c0 2.8 1.8 5.27 4.5 6.7-.2.75-.72 2.72-.82 3.14-.13.54.2.53.42.39.17-.11 2.72-1.85 3.83-2.6.68.09 1.38.14 2.07.14 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/>
+                </svg>
+                <span>카카오톡으로 공유하기</span>
+            </button>
+
+            <button class="share-btn copy-link" id="copy-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+                <span id="copy-link-text">청첩장 링크 복사하기</span>
+            </button>
+        </section>
+
+        <!-- ===== 엔딩 섹션 ===== -->
+        <section class="section-ending" id="ending">
+            <img src="" alt="엔딩" id="ending-image">
+            <p class="ending-message" id="ending-message">감사합니다</p>
+        </section>
+
+        <!-- ===== 푸터 ===== -->
+        <footer class="footer" id="footer">
+            <p class="copyright" id="copyright"></p>
+            <p class="powered-by" id="powered-by"></p>
+        </footer>
+    </main>
+
+    <!-- 갤러리 모달 -->
+    <div class="gallery-modal" id="gallery-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <img src="" alt="갤러리 이미지" id="gallery-modal-img">
+            <button class="modal-prev" id="gallery-prev">‹</button>
+            <button class="modal-next" id="gallery-next">›</button>
+            <button class="modal-close" id="gallery-close">×</button>
+        </div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="config.js?v=3"></script>
+    <script src="js/main.js?v=3"></script>
+</body>
+</html>

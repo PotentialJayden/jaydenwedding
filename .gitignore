@@ -1,0 +1,9 @@
+# Config with API keys
+config.js
+
+# OS files
+.DS_Store
+
+# Editor
+*.swp
+*.swo
