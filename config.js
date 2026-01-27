@@ -13,7 +13,7 @@ const CONFIG = {
   meta: {
     title: "지성 ♡ 유진 결혼합니다",
     description: "2026년 3월 28일 토요일 오전 10시 30분",
-    ogImage: "https://wedding-invitation.potentialai.com/images/cover/cover-1.jpg"
+    ogImage: "https://wedding-invitation.potentialai.com/images/og-thumbnail.jpg"
   },
 
   // ===== 커버 섹션 =====
