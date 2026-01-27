@@ -308,13 +308,13 @@ function initGallery() {
     }
 
     // 전체 이미지 미리 로딩
-    function preloadAllImages(callback) {
+    function preloadAllImages(callback, showSpinner = true) {
         if (imagesPreloaded) {
             if (callback) callback();
             return;
         }
 
-        showLoader();
+        if (showSpinner) showLoader();
         let loadedCount = 0;
         const totalImages = gallery.images.length;
 
@@ -325,7 +325,7 @@ function initGallery() {
                 preloadedImages[index] = img;
                 if (loadedCount === totalImages) {
                     imagesPreloaded = true;
-                    hideLoader();
+                    if (showSpinner) hideLoader();
                     if (callback) callback();
                 }
             };
@@ -375,10 +375,14 @@ function initGallery() {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
 
-        // 전체 이미지 미리 로딩 후 현재 이미지 표시
-        preloadAllImages(() => {
+        // 이미 로딩 완료된 경우 즉시 표시, 아니면 로딩 후 표시
+        if (imagesPreloaded) {
             modalImg.src = getOriginalImagePath(gallery.images[currentIndex]);
-        });
+        } else {
+            preloadAllImages(() => {
+                modalImg.src = getOriginalImagePath(gallery.images[currentIndex]);
+            });
+        }
     };
 
     // 모달 닫기
@@ -447,6 +451,9 @@ function initGallery() {
             }
         }
     }, { passive: true });
+
+    // 페이지 로드 시 백그라운드에서 원본 이미지 미리 로딩
+    preloadAllImages(null, false);
 }
 
 /**
