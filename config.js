@@ -267,6 +267,12 @@ const CONFIG = {
           relation: "어머니",
           bank: "새마을금고",
           number: "9002-1432-2632-5"
+        },
+        {
+          name: "정지성",
+          relation: "신랑",
+          bank: "토스뱅크",
+          number: "1000-6352-3747"
         }
       ]
     },
