@@ -823,29 +823,31 @@ section {
     width: auto;
     height: auto;
     object-fit: contain;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(0);
+    opacity: 1;
+    will-change: transform, opacity;
     user-select: none;
     -webkit-user-drag: none;
 }
 
 .gallery-slide.sliding {
-    transition: none;
+    transition: transform 0.05s linear;
 }
 
 .gallery-slide.slide-left {
-    animation: slideOutLeft 0.3s ease forwards;
+    animation: slideOutLeft 0.25s ease-out forwards;
 }
 
 .gallery-slide.slide-right {
-    animation: slideOutRight 0.3s ease forwards;
+    animation: slideOutRight 0.25s ease-out forwards;
 }
 
 .gallery-slide.slide-in-left {
-    animation: slideInFromRight 0.3s ease forwards;
+    animation: slideInFromRight 0.25s ease-out forwards;
 }
 
 .gallery-slide.slide-in-right {
-    animation: slideInFromLeft 0.3s ease forwards;
+    animation: slideInFromLeft 0.25s ease-out forwards;
 }
 
 @keyframes slideOutLeft {

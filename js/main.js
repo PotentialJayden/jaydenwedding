@@ -354,8 +354,8 @@ function initGallery() {
                 modalImg.classList.remove(inClass);
                 currentIndex = newIndex;
                 isAnimating = false;
-            }, 300);
-        }, 150);
+            }, 250);
+        }, 125);
     }
 
     // 다음/이전 이미지
