@@ -244,8 +244,8 @@ const CONFIG = {
     },
     // 지도 링크
     mapLinks: {
-      kakao: "https://map.kakao.com/link/to/웨스턴팰리스웨딩하우스,37.5082,126.7226",
-      naver: "https://map.naver.com/v5/search/웨스턴팰리스웨딩"
+      kakao: "https://map.kakao.com/link/to/웨스턴팰리스 웨딩하우스,37.5082,126.7226",
+      naver: "https://map.naver.com/v5/search/웨스턴팰리스 웨딩하우스"
     }
   },
 
