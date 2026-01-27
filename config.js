@@ -264,6 +264,12 @@ const CONFIG = {
           number: "110-123-456789"
         },
         {
+          name: "김선옥",
+          relation: "어머니",
+          bank: "신한은행",
+          number: "110-123-456789"
+        },
+        {
           name: "정지성",
           relation: "신랑",
           bank: "카카오뱅크",
