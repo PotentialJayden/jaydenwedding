@@ -113,7 +113,7 @@ function initWeddingDate() {
     today.setHours(0, 0, 0, 0);
     const diffTime = targetDate - today;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    document.getElementById('dday-number').textContent = diffDays;
+    document.getElementById('dday-number').textContent = 'D-' + diffDays;
 
     // 달력 생성
     generateCalendar(weddingDate.calendar.year, weddingDate.calendar.month, weddingDate.calendar.day);
