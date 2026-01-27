@@ -284,82 +284,157 @@ function initGallery() {
         galleryGrid.appendChild(div);
     });
 
-    // 갤러리 모달 이벤트
+    // 갤러리 모달 요소
+    const modal = document.getElementById('gallery-modal');
+    const modalImg = document.getElementById('gallery-modal-img');
+    const loader = document.getElementById('gallery-loader');
     let currentIndex = 0;
+    let isAnimating = false;
 
     // 원본 이미지 경로 반환 (모달용)
     function getOriginalImagePath(thumbPath) {
         return thumbPath.replace('images/gallery/', 'images/gallery/originals/');
     }
 
+    // 로딩 표시
+    function showLoader() {
+        loader.classList.add('active');
+    }
+
+    function hideLoader() {
+        loader.classList.remove('active');
+    }
+
+    // 이미지 로드 및 표시
+    function loadImage(src, callback) {
+        showLoader();
+        const img = new Image();
+        img.onload = () => {
+            hideLoader();
+            if (callback) callback();
+        };
+        img.onerror = () => {
+            hideLoader();
+            if (callback) callback();
+        };
+        img.src = src;
+        return src;
+    }
+
+    // 슬라이드 애니메이션으로 이미지 변경
+    function slideToImage(newIndex, direction) {
+        if (isAnimating || newIndex === currentIndex) return;
+        isAnimating = true;
+
+        const outClass = direction === 'left' ? 'slide-left' : 'slide-right';
+        const inClass = direction === 'left' ? 'slide-in-left' : 'slide-in-right';
+
+        // 현재 이미지 슬라이드 아웃
+        modalImg.classList.add(outClass);
+
+        setTimeout(() => {
+            // 새 이미지 로드
+            const newSrc = getOriginalImagePath(gallery.images[newIndex]);
+            loadImage(newSrc, () => {
+                modalImg.src = newSrc;
+                modalImg.classList.remove(outClass);
+                modalImg.classList.add(inClass);
+
+                setTimeout(() => {
+                    modalImg.classList.remove(inClass);
+                    currentIndex = newIndex;
+                    isAnimating = false;
+                }, 300);
+            });
+        }, 150);
+    }
+
+    // 다음/이전 이미지
+    function goNext() {
+        const newIndex = (currentIndex + 1) % gallery.images.length;
+        slideToImage(newIndex, 'left');
+    }
+
+    function goPrev() {
+        const newIndex = (currentIndex - 1 + gallery.images.length) % gallery.images.length;
+        slideToImage(newIndex, 'right');
+    }
+
+    // 모달 열기
     window.openGalleryModal = function(index) {
         currentIndex = index;
-        const modal = document.getElementById('gallery-modal');
-        document.getElementById('gallery-modal-img').src = getOriginalImagePath(gallery.images[currentIndex]);
+        const src = getOriginalImagePath(gallery.images[currentIndex]);
+        loadImage(src, () => {
+            modalImg.src = src;
+        });
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
 
-    document.getElementById('gallery-prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + gallery.images.length) % gallery.images.length;
-        document.getElementById('gallery-modal-img').src = getOriginalImagePath(gallery.images[currentIndex]);
-    });
-
-    document.getElementById('gallery-next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % gallery.images.length;
-        document.getElementById('gallery-modal-img').src = getOriginalImagePath(gallery.images[currentIndex]);
-    });
-
-    document.getElementById('gallery-close').addEventListener('click', () => {
-        document.getElementById('gallery-modal').classList.remove('active');
+    // 모달 닫기
+    function closeModal() {
+        modal.classList.remove('active');
         document.body.style.overflow = '';
-    });
+    }
 
-    document.querySelector('#gallery-modal .modal-overlay').addEventListener('click', () => {
-        document.getElementById('gallery-modal').classList.remove('active');
-        document.body.style.overflow = '';
-    });
+    // 버튼 이벤트
+    document.getElementById('gallery-prev').addEventListener('click', goPrev);
+    document.getElementById('gallery-next').addEventListener('click', goNext);
+    document.getElementById('gallery-close').addEventListener('click', closeModal);
+    document.querySelector('#gallery-modal .modal-overlay').addEventListener('click', closeModal);
 
     // 키보드 이벤트
     document.addEventListener('keydown', (e) => {
-        const modal = document.getElementById('gallery-modal');
         if (!modal.classList.contains('active')) return;
 
         if (e.key === 'ArrowLeft') {
-            currentIndex = (currentIndex - 1 + gallery.images.length) % gallery.images.length;
-            document.getElementById('gallery-modal-img').src = getOriginalImagePath(gallery.images[currentIndex]);
+            goPrev();
         } else if (e.key === 'ArrowRight') {
-            currentIndex = (currentIndex + 1) % gallery.images.length;
-            document.getElementById('gallery-modal-img').src = getOriginalImagePath(gallery.images[currentIndex]);
+            goNext();
         } else if (e.key === 'Escape') {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
+            closeModal();
         }
     });
 
     // 터치 스와이프 이벤트 (모바일)
-    const modalContent = document.querySelector('#gallery-modal .modal-content');
+    const slider = document.getElementById('gallery-slider');
     let touchStartX = 0;
-    let touchEndX = 0;
+    let touchCurrentX = 0;
+    let isDragging = false;
 
-    modalContent.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
+    slider.addEventListener('touchstart', (e) => {
+        if (isAnimating) return;
+        touchStartX = e.touches[0].clientX;
+        touchCurrentX = touchStartX;
+        isDragging = true;
+        modalImg.classList.add('sliding');
     }, { passive: true });
 
-    modalContent.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const swipeDistance = touchEndX - touchStartX;
-        const minSwipeDistance = 50;
+    slider.addEventListener('touchmove', (e) => {
+        if (!isDragging || isAnimating) return;
+        touchCurrentX = e.touches[0].clientX;
+        const diff = touchCurrentX - touchStartX;
+        // 손가락 따라 이미지 이동
+        modalImg.style.transform = `translateX(${diff}px)`;
+    }, { passive: true });
 
-        if (Math.abs(swipeDistance) > minSwipeDistance) {
-            if (swipeDistance < 0) {
-                // 왼쪽으로 스와이프 → 다음 사진
-                currentIndex = (currentIndex + 1) % gallery.images.length;
+    slider.addEventListener('touchend', (e) => {
+        if (!isDragging || isAnimating) return;
+        isDragging = false;
+        modalImg.classList.remove('sliding');
+
+        const diff = touchCurrentX - touchStartX;
+        const threshold = 50;
+
+        // 원위치로 리셋
+        modalImg.style.transform = '';
+
+        if (Math.abs(diff) > threshold) {
+            if (diff < 0) {
+                goNext(); // 왼쪽 스와이프 → 다음
             } else {
-                // 오른쪽으로 스와이프 → 이전 사진
-                currentIndex = (currentIndex - 1 + gallery.images.length) % gallery.images.length;
+                goPrev(); // 오른쪽 스와이프 → 이전
             }
-            document.getElementById('gallery-modal-img').src = getOriginalImagePath(gallery.images[currentIndex]);
         }
     }, { passive: true });
 }
