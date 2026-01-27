@@ -259,20 +259,14 @@ const CONFIG = {
         {
           name: "정봉수",
           relation: "아버지",
-          bank: "신한은행",
-          number: "110-123-456789"
+          bank: "토스뱅크",
+          number: "1000-6352-3747"
         },
         {
           name: "김선옥",
           relation: "어머니",
-          bank: "신한은행",
-          number: "110-123-456789"
-        },
-        {
-          name: "정지성",
-          relation: "신랑",
-          bank: "카카오뱅크",
-          number: "3333-01-1234567"
+          bank: "새마을금고",
+          number: "9002-1432-2632-5"
         }
       ]
     },
@@ -283,7 +277,7 @@ const CONFIG = {
           name: "전유진",
           relation: "신부",
           bank: "토스뱅크",
-          number: "1000-1234-5678"
+          number: "1000-4529-5447"
         }
       ]
     }
