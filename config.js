@@ -218,7 +218,7 @@ const CONFIG = {
       car: {
         title: "자차",
         content: [
-          "내비게이션 : '웨스턴팰리스웨딩홀' 검색",
+          "내비게이션 : '웨스턴팰리스 웨딩하우스' 검색",
           "주차장 1,500대 수용 가능"
         ]
       },
@@ -244,8 +244,8 @@ const CONFIG = {
     },
     // 지도 링크
     mapLinks: {
-      kakao: "https://map.kakao.com/link/to/웨스턴팰리스 웨딩하우스,37.5082,126.7226",
-      naver: "https://map.naver.com/v5/search/웨스턴팰리스 웨딩하우스"
+      kakao: "https://map.kakao.com/?q=웨스턴팰리스 웨딩하우스 갈산역",
+      naver: "https://map.naver.com/v5/search/웨스턴팰리스 웨딩하우스 갈산역"
     }
   },
 

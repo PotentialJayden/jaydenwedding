@@ -290,6 +290,8 @@ function initGallery() {
     const loader = document.getElementById('gallery-loader');
     let currentIndex = 0;
     let isAnimating = false;
+    let imagesPreloaded = false;
+    const preloadedImages = [];
 
     // 원본 이미지 경로 반환 (모달용)
     function getOriginalImagePath(thumbPath) {
@@ -305,20 +307,30 @@ function initGallery() {
         loader.classList.remove('active');
     }
 
-    // 이미지 로드 및 표시
-    function loadImage(src, callback) {
+    // 전체 이미지 미리 로딩
+    function preloadAllImages(callback) {
+        if (imagesPreloaded) {
+            if (callback) callback();
+            return;
+        }
+
         showLoader();
-        const img = new Image();
-        img.onload = () => {
-            hideLoader();
-            if (callback) callback();
-        };
-        img.onerror = () => {
-            hideLoader();
-            if (callback) callback();
-        };
-        img.src = src;
-        return src;
+        let loadedCount = 0;
+        const totalImages = gallery.images.length;
+
+        gallery.images.forEach((thumbPath, index) => {
+            const img = new Image();
+            img.onload = img.onerror = () => {
+                loadedCount++;
+                preloadedImages[index] = img;
+                if (loadedCount === totalImages) {
+                    imagesPreloaded = true;
+                    hideLoader();
+                    if (callback) callback();
+                }
+            };
+            img.src = getOriginalImagePath(thumbPath);
+        });
     }
 
     // 슬라이드 애니메이션으로 이미지 변경
@@ -333,19 +345,16 @@ function initGallery() {
         modalImg.classList.add(outClass);
 
         setTimeout(() => {
-            // 새 이미지 로드
-            const newSrc = getOriginalImagePath(gallery.images[newIndex]);
-            loadImage(newSrc, () => {
-                modalImg.src = newSrc;
-                modalImg.classList.remove(outClass);
-                modalImg.classList.add(inClass);
+            // 이미 로드된 이미지 사용
+            modalImg.src = getOriginalImagePath(gallery.images[newIndex]);
+            modalImg.classList.remove(outClass);
+            modalImg.classList.add(inClass);
 
-                setTimeout(() => {
-                    modalImg.classList.remove(inClass);
-                    currentIndex = newIndex;
-                    isAnimating = false;
-                }, 300);
-            });
+            setTimeout(() => {
+                modalImg.classList.remove(inClass);
+                currentIndex = newIndex;
+                isAnimating = false;
+            }, 300);
         }, 150);
     }
 
@@ -363,12 +372,13 @@ function initGallery() {
     // 모달 열기
     window.openGalleryModal = function(index) {
         currentIndex = index;
-        const src = getOriginalImagePath(gallery.images[currentIndex]);
-        loadImage(src, () => {
-            modalImg.src = src;
-        });
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // 전체 이미지 미리 로딩 후 현재 이미지 표시
+        preloadAllImages(() => {
+            modalImg.src = getOriginalImagePath(gallery.images[currentIndex]);
+        });
     };
 
     // 모달 닫기
