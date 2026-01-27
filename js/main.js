@@ -357,44 +357,19 @@ function initLocation() {
     // 길안내 생성
     generateDirections();
 
-    // 카카오 지도 동적 로드
-    const kakaoMapKey = CONFIG.api?.kakaoMapKey;
-    if (kakaoMapKey && kakaoMapKey !== 'YOUR_KAKAO_MAP_KEY') {
-        const script = document.createElement('script');
-        script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoMapKey}&autoload=false`;
-        script.onload = () => {
-            kakao.maps.load(() => {
-                const mapContainer = document.getElementById('map');
-                const mapOptions = {
-                    center: new kakao.maps.LatLng(location.coordinates.lat, location.coordinates.lng),
-                    level: 3
-                };
-                const map = new kakao.maps.Map(mapContainer, mapOptions);
-                const marker = new kakao.maps.Marker({
-                    position: new kakao.maps.LatLng(location.coordinates.lat, location.coordinates.lng)
-                });
-                marker.setMap(map);
-            });
-        };
-        script.onerror = () => {
-            const mapContainer = document.getElementById('map');
-            mapContainer.innerHTML = `
-                <div class="map-fallback">
-                    <p>지도를 불러올 수 없습니다</p>
-                    <a href="${location.mapLinks.kakao}" target="_blank">카카오맵에서 보기</a>
-                </div>
-            `;
-        };
-        document.head.appendChild(script);
-    } else {
-        const mapContainer = document.getElementById('map');
-        mapContainer.innerHTML = `
-            <div class="map-fallback">
-                <p>지도 API 키가 설정되지 않았습니다</p>
-                <a href="${location.mapLinks.kakao}" target="_blank">카카오맵에서 보기</a>
+    // 정적 지도 표시 (API 키 불필요)
+    const mapContainer = document.getElementById('map');
+    mapContainer.innerHTML = `
+        <div class="map-static">
+            <div class="map-pin">
+                <svg viewBox="0 0 24 24" fill="#D4A574" width="48" height="48">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
             </div>
-        `;
-    }
+            <p class="map-venue">${location.venue.name}</p>
+            <p class="map-address">${location.venue.address}</p>
+        </div>
+    `;
 }
 
 /**
