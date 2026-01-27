@@ -28,14 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /**
  * 메타 정보 설정
+ * 주의: OG 태그는 크롤러가 JS를 실행하지 않으므로 index.html에 하드코딩되어 있음
+ * 이 함수는 document.title만 업데이트
  */
 function initMeta() {
     const { meta } = CONFIG;
-    document.getElementById('page-title').textContent = meta.title;
-    document.getElementById('meta-description').setAttribute('content', meta.description);
-    document.getElementById('og-title').setAttribute('content', meta.title);
-    document.getElementById('og-description').setAttribute('content', meta.description);
-    document.getElementById('og-image').setAttribute('content', meta.ogImage);
+    // document.title 업데이트 (런타임에서만 적용)
+    if (meta.title) {
+        document.title = meta.title;
+    }
 }
 
 /**
