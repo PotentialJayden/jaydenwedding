@@ -1018,6 +1018,40 @@ section {
     color: #333;
 }
 
+/* Parking Info */
+.parking-info {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.parking-name {
+    margin-bottom: 5px !important;
+}
+
+.parking-address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.copy-address-btn {
+    padding: 4px 12px;
+    font-size: 12px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.parking-detail {
+    font-size: 12px !important;
+    color: #888 !important;
+}
+
 /* ===== Account Section ===== */
 .section-account {
     background: #f8f8f8;

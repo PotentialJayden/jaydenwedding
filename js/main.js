@@ -535,7 +535,42 @@ function generateDirections() {
         `;
         directionsContainer.appendChild(subwayDiv);
     }
+
+    // 주차장
+    if (location.directions.parking) {
+        const parking = location.directions.parking;
+        const parkingDiv = document.createElement('div');
+        parkingDiv.className = 'direction-item parking-info';
+        parkingDiv.innerHTML = `
+            <h4 class="direction-title">
+                <span class="direction-icon">🅿️</span>
+                ${parking.title}
+            </h4>
+            <p class="parking-name"><strong>${parking.name}</strong></p>
+            <p class="parking-address">
+                ${parking.address}
+                <button class="copy-address-btn" onclick="copyParkingAddress('${parking.address}')">복사</button>
+            </p>
+            ${parking.details.map(detail => `<p class="parking-detail">• ${detail}</p>`).join('')}
+        `;
+        directionsContainer.appendChild(parkingDiv);
+    }
 }
+
+// 주차장 주소 복사
+window.copyParkingAddress = function(address) {
+    navigator.clipboard.writeText(address).then(() => {
+        showToast('주소가 복사되었습니다');
+    }).catch(() => {
+        const textarea = document.createElement('textarea');
+        textarea.value = address;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('주소가 복사되었습니다');
+    });
+};
 
 /**
  * 계좌번호 섹션 초기화
