@@ -1162,8 +1162,8 @@ section {
 
 .section-ending img {
     width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 .ending-message {
