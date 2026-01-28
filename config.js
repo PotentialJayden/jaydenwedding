@@ -195,7 +195,8 @@ const CONFIG = {
       "images/gallery/gallery-24.jpg",
       "images/gallery/gallery-25.jpg",
       "images/gallery/gallery-26.jpg",
-      "images/gallery/gallery-27.jpg"
+      "images/gallery/gallery-27.jpg",
+      "images/gallery/gallery-28.jpg"
     ]
   },
 
